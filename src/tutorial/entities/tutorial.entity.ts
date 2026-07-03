@@ -39,9 +39,9 @@ export interface TutorialAnalytics {
 }
 
 @Entity('tutorials')
-@Index(['type', 'isActive'])
-@Index(['difficultyLevel', 'order'])
-@Index(['category'])
+// @Index(['type', 'isActive'])
+// @Index(['difficultyLevel', 'order'])
+// @Index(['category'])
 export class Tutorial {
   @PrimaryGeneratedColumn('uuid')
   id: string;

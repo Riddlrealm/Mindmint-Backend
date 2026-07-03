@@ -16,9 +16,9 @@ import {
 import { Tag } from './tag.entity';
 
 @Entity('puzzles')
-@Index(['category', 'difficulty'])
-@Index(['isActive', 'publishedAt'])
-@Index(['createdBy'])
+// @Index(['category', 'difficulty'])
+// @Index(['isActive', 'publishedAt'])
+// @Index(['createdBy'])
 export class Puzzle {
   @Column({ type: 'timestamp with time zone', nullable: true })
   archivedAt?: Date;

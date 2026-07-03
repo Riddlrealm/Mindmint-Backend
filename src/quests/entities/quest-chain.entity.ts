@@ -39,7 +39,7 @@ export interface QuestChainRewards {
 }
 
 @Entity('quest_chains')
-@Index(['status', 'createdAt'])
+// @Index(['status', 'createdAt'])
 export class QuestChain {
   @PrimaryGeneratedColumn('uuid')
   id: string;

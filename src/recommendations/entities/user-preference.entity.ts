@@ -11,7 +11,7 @@ import {
 import { User } from '../../users/entities/user.entity';
 
 @Entity('user_preferences')
-@Index(['userId'])
+// @Index(['userId'])
 export class UserPreference {
   @PrimaryGeneratedColumn('uuid')
   id: string;

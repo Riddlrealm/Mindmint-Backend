@@ -18,7 +18,7 @@ import { PuzzleEditor } from './puzzle-editor.entity';
 @Entity('puzzle_editor_versions')
 @Index(['puzzleEditorId', 'versionNumber'])
 @Index(['createdBy'])
-@Index(['createdAt'])
+// @Index(['createdAt'])
 export class PuzzleEditorVersion {
   @PrimaryGeneratedColumn('uuid')
   id: string;

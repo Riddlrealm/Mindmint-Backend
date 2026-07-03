@@ -24,13 +24,13 @@ export enum EventProcessingStatus {
 
 @Entity('onchain_events')
 @Index(['contractAddress'])
-@Index(['eventType'])
+// @Index(['eventType'])
 @Index(['txHash'], { unique: true })
-@Index(['ledger'])
-@Index(['status'])
-@Index(['processedAt'])
-@Index(['contractAddress', 'eventType'])
-@Index(['ledger', 'status'])
+// @Index(['ledger'])
+// @Index(['status'])
+// @Index(['processedAt'])
+// @Index(['contractAddress', 'eventType'])
+// @Index(['ledger', 'status'])
 export class OnChainEvent {
   @PrimaryGeneratedColumn('uuid')
   id: string;

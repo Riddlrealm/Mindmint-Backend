@@ -10,8 +10,8 @@ export type WalletTransactionType = 'reward' | 'purchase' | 'stake' | 'unstake' 
 
 @Entity('wallet_transactions')
 @Index(['walletAddress', 'txHash'], { unique: true })
-@Index(['walletAddress', 'createdAt'])
-@Index(['walletAddress', 'type'])
+// @Index(['walletAddress', 'createdAt'])
+// @Index(['walletAddress', 'type'])
 export class WalletTransaction {
   @PrimaryGeneratedColumn('uuid')
   id: string;

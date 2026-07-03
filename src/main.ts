@@ -28,7 +28,7 @@ async function bootstrap() {
 
   const configService = app.get(ConfigService);
 
-  const port = configService.get<number>('app.port') || 3003;
+  const port = configService.get<number>('app.port') || 3000;
   const apiPrefix = configService.get<string>('app.apiPrefix') || 'api/v1';
 
   // Security middleware
@@ -72,12 +72,12 @@ async function bootstrap() {
   await app.listen(port);
 
   logger.log(
-    `🚀 Migration Service is running on: http://localhost:${port}/${apiPrefix}`,
+    `🚀 Mindmint API is running on: http://localhost:${port}/${apiPrefix}`,
     'Bootstrap',
   );
 }
 
 bootstrap().catch((error) => {
-  Logger.error('Failed to start the Migration Service', error);
+  Logger.error('Failed to start Mindmint', error);
   process.exit(1);
 });

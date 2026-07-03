@@ -32,6 +32,6 @@ export class CollectionEntity {
   @Column({ type: 'int', default: 0 })
   reward_value: number;
 
-  @Column({ type: 'datetime', default: () => "(datetime('now'))" })
+  @Column({ type: 'timestamp', default: () => 'now()' })
   created_at: Date;
 }

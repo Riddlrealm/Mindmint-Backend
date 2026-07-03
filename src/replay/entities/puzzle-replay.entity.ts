@@ -21,10 +21,10 @@ export enum ReplaySharePermission {
  * Replays are immutable after completion
  */
 @Entity('puzzle_replays')
-@Index(['userId', 'puzzleId'])
-@Index(['userId', 'createdAt'])
-@Index(['puzzleId', 'isCompleted'])
-@Index(['shareCode'])
+// @Index(['userId', 'puzzleId'])
+// @Index(['userId', 'createdAt'])
+// @Index(['puzzleId', 'isCompleted'])
+// @Index(['shareCode'])
 export class PuzzleReplay {
   @PrimaryGeneratedColumn('uuid')
   id: string;

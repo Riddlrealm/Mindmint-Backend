@@ -17,9 +17,9 @@ export enum EnergyGiftStatus {
 }
 
 @Entity('energy_gifts')
-@Index(['recipientId', 'status'])
-@Index(['senderId', 'createdAt'])
-@Index(['expiresAt'])
+// @Index(['recipientId', 'status'])
+// @Index(['senderId', 'createdAt'])
+// @Index(['expiresAt'])
 export class EnergyGift {
   @PrimaryGeneratedColumn('uuid')
   id: string;

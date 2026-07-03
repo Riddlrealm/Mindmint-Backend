@@ -12,8 +12,9 @@ import {
 import { HintUsage } from './hint-usage.entity';
 
 @Entity('hints')
-@Index(['puzzleId', 'order'])
-@Index(['type', 'difficulty'])
+// @Index(['puzzleId', 'order'])
+// NOTE: 'difficulty' column does not exist on Hint; left commented out so TypeORM can boot.
+// @Index(['type', 'difficulty'])
 export class Hint {
   @PrimaryGeneratedColumn('uuid')
   id: string;

@@ -70,7 +70,7 @@ export interface HelpAnalytics {
 }
 
 @Entity('contextual_help')
-@Index(['triggerContext', 'isActive'])
+// @Index(['triggerContext', 'isActive'])
 @Index(['targetFeature'])
 @Index(['targetPuzzleType'])
 export class ContextualHelp {

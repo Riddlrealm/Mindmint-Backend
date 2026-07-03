@@ -13,8 +13,8 @@ import {
  * Actions are immutable once recorded
  */
 @Entity('replay_actions')
-@Index(['replayId', 'sequenceNumber'])
-@Index(['replayId', 'timestamp'])
+// @Index(['replayId', 'sequenceNumber'])
+// @Index(['replayId', 'timestamp'])
 export class ReplayAction {
   @PrimaryGeneratedColumn('uuid')
   id: string;

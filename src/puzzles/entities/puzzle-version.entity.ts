@@ -21,8 +21,8 @@ import { Puzzle } from './puzzle.entity';
  */
 @Entity('puzzle_versions')
 @Index(['puzzleId', 'version'], { unique: true })
-@Index(['puzzleId', 'createdAt'])
-@Index(['changedBy'])
+// @Index(['puzzleId', 'createdAt'])
+// @Index(['changedBy'])
 export class PuzzleVersion {
   @PrimaryGeneratedColumn('uuid')
   id: string;

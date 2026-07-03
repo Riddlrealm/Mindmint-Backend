@@ -2,9 +2,9 @@ import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, Index } from 
 import type { PuzzleType, DifficultyLevel } from "../types/puzzle.types"
 
 @Entity("puzzle_analytics")
-@Index(["puzzleId", "playerId"])
-@Index(["puzzleType", "difficulty"])
-@Index(["timestamp"])
+// @Index(["puzzleId", "playerId"])
+// @Index(["puzzleType", "difficulty"])
+// @Index(["timestamp"])
 export class PuzzleAnalytics {
   @PrimaryGeneratedColumn("uuid")
   id: string

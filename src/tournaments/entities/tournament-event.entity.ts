@@ -10,7 +10,7 @@ import {
 import { TournamentEventParticipant } from './tournament-event-participant.entity';
 
 @Entity('tournament_events')
-@Index(['status', 'startAt'])
+// @Index(['status', 'startAt'])
 export class TournamentEvent {
   @PrimaryGeneratedColumn('uuid')
   id: string;

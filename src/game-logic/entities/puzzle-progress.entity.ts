@@ -11,8 +11,8 @@ import {
 
 @Entity('puzzle_progress')
 @Index(['userId', 'puzzleId'], { unique: true })
-@Index(['userId', 'status'])
-@Index(['puzzleId', 'status'])
+// @Index(['userId', 'status'])
+// @Index(['puzzleId', 'status'])
 export class PuzzleProgress {
   @PrimaryGeneratedColumn('uuid')
   id: string;

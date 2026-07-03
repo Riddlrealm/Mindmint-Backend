@@ -15,9 +15,9 @@ import { ViolationType, Severity, ViolationStatus, ActionType } from '../constan
  * Entity for tracking cheat violations detected in the system
  */
 @Entity('cheat_violations')
-@Index(['playerId', 'createdAt'])
-@Index(['violationType', 'severity'])
-@Index(['status', 'createdAt'])
+// @Index(['playerId', 'createdAt'])
+// @Index(['violationType', 'severity'])
+// @Index(['status', 'createdAt'])
 export class CheatViolation {
   @PrimaryGeneratedColumn('uuid')
   id: string;

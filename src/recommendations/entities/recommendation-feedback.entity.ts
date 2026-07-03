@@ -11,9 +11,9 @@ import { User } from '../../users/entities/user.entity';
 import { Puzzle } from '../../puzzles/entities/puzzle.entity';
 
 @Entity('recommendation_feedback')
-@Index(['userId', 'puzzleId'])
-@Index(['userId', 'createdAt'])
-@Index(['feedbackType', 'createdAt'])
+// @Index(['userId', 'puzzleId'])
+// @Index(['userId', 'createdAt'])
+// @Index(['feedbackType', 'createdAt'])
 export class RecommendationFeedback {
   @PrimaryGeneratedColumn('uuid')
   id: string;

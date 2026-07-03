@@ -9,7 +9,7 @@ export type PlayerActionEventType =
   | 'achievement.unlocked';
 
 @Entity('player_action_events')
-@Index(['userId', 'eventType', 'timestamp'])
+// @Index(['userId', 'eventType', 'timestamp'])
 export class PlayerActionEvent {
   @PrimaryGeneratedColumn('uuid')
   id: string;

@@ -11,9 +11,9 @@ import {
 import { Tournament } from './tournament.entity';
 
 @Entity('tournament_matches')
-@Index(['tournamentId', 'roundNumber'])
-@Index(['tournamentId', 'status'])
-@Index(['player1Id', 'player2Id'])
+// @Index(['tournamentId', 'roundNumber'])
+// @Index(['tournamentId', 'status'])
+// @Index(['player1Id', 'player2Id'])
 export class TournamentMatch {
   @PrimaryGeneratedColumn('uuid')
   id: string;

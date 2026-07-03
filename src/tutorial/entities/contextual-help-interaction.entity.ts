@@ -24,9 +24,9 @@ export interface InteractionContext {
 }
 
 @Entity('contextual_help_interactions')
-@Index(['userId', 'helpId'])
-@Index(['userId', 'triggerContext'])
-@Index(['helpId', 'action'])
+// @Index(['userId', 'helpId'])
+// @Index(['userId', 'triggerContext'])
+// @Index(['helpId', 'action'])
 export class ContextualHelpInteraction {
   @PrimaryGeneratedColumn('uuid')
   id: string;

@@ -24,7 +24,7 @@ import { PuzzleEditorVersion } from './puzzle-editor-version.entity';
 import { CommunitySubmission } from './community-submission.entity';
 
 @Entity('puzzle_editors')
-@Index(['createdBy', 'status'])
+// @Index(['createdBy', 'status'])
 @Index(['puzzleId'])
 @Index(['templateId'])
 export class PuzzleEditor {

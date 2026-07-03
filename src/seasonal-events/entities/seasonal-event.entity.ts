@@ -12,8 +12,8 @@ import { PlayerEvent } from './player-event.entity';
 import { EventReward } from './event-reward.entity';
 
 @Entity('seasonal_events')
-@Index(['startDate', 'endDate'])
-@Index(['isActive'])
+// @Index(['startDate', 'endDate'])
+// @Index(['isActive'])
 export class SeasonalEvent {
   @PrimaryGeneratedColumn('uuid')
   id: string;

@@ -9,7 +9,7 @@ import {
 
 @Entity('hint_templates')
 @Index(['puzzleType', 'difficulty'])
-@Index(['category', 'isActive'])
+// @Index(['category', 'isActive'])
 export class HintTemplate {
   @PrimaryGeneratedColumn('uuid')
   id: string;

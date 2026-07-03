@@ -16,9 +16,9 @@ import { User } from '../../users/entities/user.entity';
 import { PuzzleEditor } from './puzzle-editor.entity';
 
 @Entity('puzzle_editor_activities')
-@Index(['puzzleEditorId', 'createdAt'])
+// @Index(['puzzleEditorId', 'createdAt'])
 @Index(['userId'])
-@Index(['activityType'])
+// @Index(['activityType'])
 export class PuzzleEditorActivity {
   @PrimaryGeneratedColumn('uuid')
   id: string;

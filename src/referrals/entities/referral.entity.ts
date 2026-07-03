@@ -21,8 +21,8 @@ export enum ReferralStatus {
 @Entity('referrals')
 @Index(['referrerId', 'refereeId'], { unique: true })
 @Index(['referralCodeId'])
-@Index(['refereeId'])
-@Index(['status'])
+// @Index(['refereeId'])
+// @Index(['status'])
 export class Referral {
   @PrimaryGeneratedColumn('uuid')
   id: string;

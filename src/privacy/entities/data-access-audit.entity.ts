@@ -41,10 +41,10 @@ export enum AccessReason {
 @Entity('data_access_audit')
 @Index(['userId'])
 @Index(['accessedBy'])
-@Index(['accessType'])
-@Index(['entityType'])
-@Index(['createdAt'])
-@Index(['userId', 'accessType'])
+// @Index(['accessType'])
+// @Index(['entityType'])
+// @Index(['createdAt'])
+// @Index(['userId', 'accessType'])
 export class DataAccessAudit {
   @PrimaryGeneratedColumn('uuid')
   id: string;

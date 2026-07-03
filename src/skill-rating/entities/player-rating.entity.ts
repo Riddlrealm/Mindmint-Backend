@@ -28,9 +28,9 @@ export enum SeasonStatus {
 }
 
 @Entity('player_ratings')
-@Index(['userId', 'seasonId'])
-@Index(['rating'])
-@Index(['tier'])
+// @Index(['userId', 'seasonId'])
+// @Index(['rating'])
+// @Index(['tier'])
 export class PlayerRating {
   @PrimaryGeneratedColumn('uuid')
   id: string;

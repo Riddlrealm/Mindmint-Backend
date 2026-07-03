@@ -84,7 +84,7 @@ export interface StepAnalytics {
 }
 
 @Entity('tutorial_steps')
-@Index(['tutorialId', 'order'])
+// @Index(['tutorialId', 'order'])
 @Index(['type', 'isActive'])
 export class TutorialStep {
   @PrimaryGeneratedColumn('uuid')

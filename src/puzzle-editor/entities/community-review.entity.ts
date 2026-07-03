@@ -17,7 +17,7 @@ import { User } from '../../users/entities/user.entity';
 import { CommunitySubmission } from './community-submission.entity';
 
 @Entity('community_reviews')
-@Index(['submissionId', 'createdAt'])
+// @Index(['submissionId', 'createdAt'])
 @Index(['reviewedBy'])
 export class CommunityReview {
   @PrimaryGeneratedColumn('uuid')

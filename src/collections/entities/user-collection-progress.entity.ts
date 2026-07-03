@@ -21,7 +21,7 @@ export class UserCollectionProgress {
   @Column({ type: 'boolean', default: false })
   is_completed: boolean;
 
-  @Column({ type: 'datetime', nullable: true })
+  @Column({ type: 'timestamp', nullable: true })
   completed_at?: Date;
 
   @Column({ type: 'boolean', default: false })

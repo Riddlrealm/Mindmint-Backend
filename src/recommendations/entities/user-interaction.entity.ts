@@ -11,8 +11,8 @@ import { User } from '../../users/entities/user.entity';
 import { Puzzle } from '../../puzzles/entities/puzzle.entity';
 
 @Entity('user_interactions')
-@Index(['userId', 'puzzleId'])
-@Index(['userId', 'interactionType', 'createdAt'])
+// @Index(['userId', 'puzzleId'])
+// @Index(['userId', 'interactionType', 'createdAt'])
 export class UserInteraction {
   @PrimaryGeneratedColumn('uuid')
   id: string;

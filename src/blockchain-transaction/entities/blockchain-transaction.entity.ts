@@ -47,12 +47,12 @@ export enum TransactionCategory {
 @Entity('blockchain_transactions')
 @Index(['transactionHash'])
 @Index(['userId'])
-@Index(['status'])
+// @Index(['status'])
 @Index(['type'])
-@Index(['category'])
-@Index(['createdAt'])
-@Index(['userId', 'status'])
-@Index(['type', 'status'])
+// @Index(['category'])
+// @Index(['createdAt'])
+// @Index(['userId', 'status'])
+// @Index(['type', 'status'])
 export class BlockchainTransaction {
   @PrimaryGeneratedColumn('uuid')
   id: string;

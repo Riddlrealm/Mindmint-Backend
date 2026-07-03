@@ -8,6 +8,6 @@ export class UserPuzzleCompletion {
   @PrimaryColumn('uuid')
   puzzle_id: string;
 
-  @Column({ type: 'datetime', default: () => "(datetime('now'))" })
+  @Column({ type: 'timestamp', default: () => 'now()' })
   completed_at: Date;
 }

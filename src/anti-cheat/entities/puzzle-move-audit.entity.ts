@@ -14,9 +14,9 @@ import type { PuzzleMove, ValidationResult } from '../../game-engine/types/puzzl
  * Used for forensic analysis and pattern detection
  */
 @Entity('puzzle_move_audit')
-@Index(['playerId', 'puzzleId', 'createdAt'])
-@Index(['sessionId'])
-@Index(['flaggedAsSuspicious', 'createdAt'])
+// @Index(['playerId', 'puzzleId', 'createdAt'])
+// @Index(['sessionId'])
+// @Index(['flaggedAsSuspicious', 'createdAt'])
 export class PuzzleMoveAudit {
   @PrimaryGeneratedColumn('uuid')
   id: string;

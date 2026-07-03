@@ -21,8 +21,8 @@ import {
 
 @Entity('save_games')
 @Index(['userId', 'slotId'], { unique: true })
-@Index(['userId', 'syncStatus'])
-@Index(['lastModifiedAt'])
+// @Index(['userId', 'syncStatus'])
+// @Index(['lastModifiedAt'])
 export class SaveGame {
   @PrimaryGeneratedColumn('uuid')
   id: string;

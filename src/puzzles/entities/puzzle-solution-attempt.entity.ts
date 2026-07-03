@@ -27,9 +27,9 @@ export enum SolutionAttemptStatus {
  */
 @Entity('puzzle_solution_attempts')
 @Unique(['nonce'])                     // Anti-replay: nonce must be globally unique
-@Index(['userId', 'puzzleId'])
-@Index(['userId', 'createdAt'])
-@Index(['puzzleId', 'status'])
+// @Index(['userId', 'puzzleId'])
+// @Index(['userId', 'createdAt'])
+// @Index(['puzzleId', 'status'])
 export class PuzzleSolutionAttempt {
   @PrimaryGeneratedColumn('uuid')
   id: string;

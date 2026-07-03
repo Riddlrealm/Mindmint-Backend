@@ -34,9 +34,9 @@ export enum DeletionReason {
 
 @Entity('data_deletion_requests')
 @Index(['userId'])
-@Index(['status'])
-@Index(['createdAt'])
-@Index(['scheduledFor'])
+// @Index(['status'])
+// @Index(['createdAt'])
+// @Index(['scheduledFor'])
 export class DataDeletionRequest {
   @PrimaryGeneratedColumn('uuid')
   id: string;

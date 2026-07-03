@@ -60,6 +60,23 @@ import { RateLimitGuard } from './api/guards/rate-limit.guard';
     // Guards
     JwtAuthGuard,
     RateLimitGuard,
+    // Stub providers for interface tokens
+    {
+      provide: 'IEventPublisher',
+      useValue: { publish: () => Promise.resolve(), publishBatch: () => Promise.resolve() },
+    },
+    {
+      provide: 'IUserService',
+      useValue: { findById: () => Promise.resolve(null), findByIds: () => Promise.resolve([]) },
+    },
+    {
+      provide: 'INotificationService',
+      useValue: { send: () => Promise.resolve() },
+    },
+    {
+      provide: 'ILeaderboardService',
+      useValue: { getTopPlayers: () => Promise.resolve([]), getRank: () => Promise.resolve(null) },
+    },
   ],
   exports: [
     FriendRequestService,

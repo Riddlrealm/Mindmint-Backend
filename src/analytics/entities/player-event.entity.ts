@@ -1,8 +1,8 @@
 import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, Index } from 'typeorm';
 
 @Entity('player_events')
-@Index(['playerId', 'timestamp'])
-@Index(['type', 'timestamp'])
+// @Index(['playerId', 'timestamp'])
+// @Index(['type', 'timestamp'])
 export class PlayerEvent {
   @PrimaryGeneratedColumn('uuid')
   id: string;

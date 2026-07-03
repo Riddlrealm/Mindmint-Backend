@@ -1,26 +1,23 @@
 
 import { Injectable } from '@nestjs/common';
 import { OnEvent } from '@nestjs/event-emitter';
-
-interface NotificationsService {
-  createNotification(payload: any): Promise<any>;
-}
+import { NotificationService } from '../../notifications/notification.service';
 
 @Injectable()
 export class ReportEventsListener {
-  constructor(private readonly notificationsService: NotificationsService) {}
+  constructor(private readonly notificationsService: NotificationService) {}
 
   @OnEvent('report.resolved')
   async handleReportResolved(payload: { report: any; resolution: string }) {
     const { report, resolution } = payload;
 
     // Send notification to the original reporter
-    await this.notificationsService.createNotification({
-      userId: report.reporterId,
+    await this.notificationsService.createNotificationForUsers({
+      userIds: [report.reporterId],
       type: 'report_resolved',
       title: 'Your Report Has Been Resolved',
-      message: `The report you submitted regarding ${report.targetType} has been reviewed and resolved.`,
-      data: {
+      body: `The report you submitted regarding ${report.targetType} has been reviewed and resolved.`,
+      meta: {
         reportId: report.id,
         targetType: report.targetType,
         targetId: report.targetId,

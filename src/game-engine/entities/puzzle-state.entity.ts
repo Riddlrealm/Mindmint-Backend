@@ -3,8 +3,8 @@ import type { PuzzleStatus, PuzzleType, DifficultyLevel } from "../types/puzzle.
 
 @Entity("puzzle_states")
 @Index(["playerId", "puzzleId"], { unique: true })
-@Index(["playerId", "status"])
-@Index(["puzzleType", "difficulty"])
+// @Index(["playerId", "status"])
+// @Index(["puzzleType", "difficulty"])
 export class PuzzleState {
   @PrimaryGeneratedColumn("uuid")
   id: string

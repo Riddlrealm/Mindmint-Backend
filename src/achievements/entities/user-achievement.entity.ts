@@ -12,8 +12,8 @@ import { Achievement } from './achievement.entity';
 
 @Entity('user_achievements')
 @Index(['userId', 'achievementId'], { unique: true })
-@Index(['userId', 'unlockedAt'])
-@Index(['achievementId', 'unlockedAt'])
+// @Index(['userId', 'unlockedAt'])
+// @Index(['achievementId', 'unlockedAt'])
 export class UserAchievement {
   @PrimaryGeneratedColumn('uuid')
   id: string;

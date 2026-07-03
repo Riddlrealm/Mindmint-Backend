@@ -11,8 +11,8 @@ import {
  * Aggregated from actual replay views and comparisons
  */
 @Entity('replay_analytics')
-@Index(['replayId'])
-@Index(['replayId', 'metricType'])
+// @Index(['replayId'])
+// @Index(['replayId', 'metricType'])
 export class ReplayAnalytic {
   @PrimaryGeneratedColumn('uuid')
   id: string;

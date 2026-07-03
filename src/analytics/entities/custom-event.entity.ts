@@ -1,7 +1,7 @@
 import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, Index } from 'typeorm';
 
 @Entity('custom_events')
-@Index(['funnelId', 'step'])
+// @Index(['funnelId', 'step'])
 export class CustomEvent {
   @PrimaryGeneratedColumn('uuid')
   id: string;

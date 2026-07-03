@@ -34,9 +34,9 @@ export enum ModerationAction {
 }
 
 @Entity('user_puzzle_submissions')
-@Index(['userId', 'status'])
-@Index(['status', 'submittedAt'])
-@Index(['isPublic', 'status'])
+// @Index(['userId', 'status'])
+// @Index(['status', 'submittedAt'])
+// @Index(['isPublic', 'status'])
 export class UserPuzzleSubmission {
   @PrimaryGeneratedColumn('uuid')
   id: string;
@@ -246,8 +246,9 @@ export class UserPuzzleSubmission {
   @OneToMany('PuzzleComment', 'submission')
   comments: any[];
 
-  @OneToMany('PuzzlePlay', 'submission')
-  playSessions: any[];
+  // NOTE: 'PuzzlePlay' entity does not exist in this codebase; left commented out.
+  // @OneToMany('PuzzlePlay', 'submission')
+  // playSessions: any[];
 
   // If approved, link to the main puzzle table
   @ManyToOne(() => Puzzle, { nullable: true })

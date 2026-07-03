@@ -9,7 +9,7 @@ import {
 
 @Entity('translations')
 @Index(['key', 'locale'], { unique: true })
-@Index(['namespace'])
+// @Index(['namespace'])
 export class Translation {
   @PrimaryGeneratedColumn('uuid')
   id: string;

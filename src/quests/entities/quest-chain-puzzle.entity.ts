@@ -32,7 +32,7 @@ export interface CheckpointRewards {
 }
 
 @Entity('quest_chain_puzzles')
-@Index(['questChainId', 'sequenceOrder'])
+// @Index(['questChainId', 'sequenceOrder'])
 export class QuestChainPuzzle {
   @PrimaryGeneratedColumn('uuid')
   id: string;

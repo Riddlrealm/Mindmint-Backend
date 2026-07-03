@@ -13,7 +13,14 @@ import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [TypeOrmModule.forFeature([Notification, NotificationDelivery, Device, User]), ConfigModule],
-  providers: [NotificationService, EmailService],
+  providers: [
+    NotificationService,
+    EmailService,
+    {
+      provide: 'NOTIFICATION_SERVICE',
+      useValue: { emit: () => {}, send: () => Promise.resolve() },
+    },
+  ],
   controllers: [NotificationsController, DevicesController, StaleTokenListener],
   exports: [NotificationService, EmailService],
 })

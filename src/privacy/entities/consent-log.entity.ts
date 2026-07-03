@@ -28,10 +28,10 @@ export enum ConsentType {
 
 @Entity('consent_logs')
 @Index(['userId'])
-@Index(['consentType'])
-@Index(['action'])
-@Index(['createdAt'])
-@Index(['userId', 'consentType'])
+// @Index(['consentType'])
+// @Index(['action'])
+// @Index(['createdAt'])
+// @Index(['userId', 'consentType'])
 export class ConsentLog {
   @PrimaryGeneratedColumn('uuid')
   id: string;

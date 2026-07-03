@@ -58,8 +58,8 @@ export interface ProgressAnalytics {
 
 @Entity('user_tutorial_progress')
 @Index(['userId', 'tutorialId'], { unique: true })
-@Index(['userId', 'status'])
-@Index(['tutorialId', 'status'])
+// @Index(['userId', 'status'])
+// @Index(['tutorialId', 'status'])
 export class UserTutorialProgress {
   @PrimaryGeneratedColumn('uuid')
   id: string;

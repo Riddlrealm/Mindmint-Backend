@@ -9,8 +9,8 @@ import {
 } from 'typeorm';
 
 @Entity('hint_usages')
-@Index(['userId', 'puzzleId'])
-@Index(['hintId', 'createdAt'])
+// @Index(['userId', 'puzzleId'])
+// @Index(['hintId', 'createdAt'])
 export class HintUsage {
   @PrimaryGeneratedColumn('uuid')
   id: string;

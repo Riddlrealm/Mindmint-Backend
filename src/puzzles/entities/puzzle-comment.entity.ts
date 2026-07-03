@@ -20,9 +20,9 @@ export enum PuzzleCommentStatus {
 }
 
 @Entity('puzzle_comments')
-@Index(['submissionId', 'status'])
-@Index(['userId', 'createdAt'])
-@Index(['parentId'])
+// @Index(['submissionId', 'status'])
+// @Index(['userId', 'createdAt'])
+// @Index(['parentId'])
 export class PuzzleComment {
   @PrimaryGeneratedColumn('uuid')
   id: string;

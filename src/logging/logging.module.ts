@@ -12,6 +12,7 @@ import { LoggingInterceptor } from "./interceptors/logging.interceptor"
 import { PerformanceInterceptor } from "./interceptors/performance.interceptor"
 import { LoggingMiddleware } from "./middleware/logging.middleware"
 import { CorrelationMiddleware } from "./middleware/correlation.middleware"
+import { CorrelationService } from "./services/correlation.service"
 import { HealthController } from "./controllers/health.controller"
 import { MetricsController } from "./controllers/metrics.controller"
 import { loggingConfig } from "./config/logging.config"
@@ -32,6 +33,7 @@ import { loggingConfig } from "./config/logging.config"
   ],
   providers: [
     LoggingService,
+    CorrelationService,
     MonitoringService,
     HealthService,
     AlertingService,
@@ -45,6 +47,7 @@ import { loggingConfig } from "./config/logging.config"
   controllers: [HealthController, MetricsController],
   exports: [
     LoggingService,
+    CorrelationService,
     MonitoringService,
     HealthService,
     AlertingService,

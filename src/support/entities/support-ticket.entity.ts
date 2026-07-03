@@ -26,10 +26,10 @@ export enum TicketStatus {
 
 @Entity('support_tickets')
 @Index(['playerId'])
-@Index(['status'])
+// @Index(['status'])
 @Index(['category'])
-@Index(['assignedTo'])
-@Index(['createdAt'])
+// @Index(['assignedTo'])
+// @Index(['createdAt'])
 export class SupportTicket {
   @PrimaryGeneratedColumn('uuid')
   id: string;

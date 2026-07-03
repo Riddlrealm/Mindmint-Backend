@@ -21,10 +21,10 @@ export enum ReportPriority {
 }
 
 @Entity('content_reports')
-@Index(['targetType', 'targetId'])
-@Index(['status'])
-@Index(['priority'])
-@Index(['createdAt'])
+// @Index(['targetType', 'targetId'])
+// @Index(['status'])
+// @Index(['priority'])
+// @Index(['createdAt'])
 export class ContentReport {
   @PrimaryGeneratedColumn('uuid')
   id: string;

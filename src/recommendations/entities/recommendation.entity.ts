@@ -13,8 +13,8 @@ import { Puzzle } from '../../puzzles/entities/puzzle.entity';
 
 @Entity('recommendations')
 @Index(['userId', 'puzzleId'], { unique: true })
-@Index(['userId', 'createdAt'])
-@Index(['algorithm', 'createdAt'])
+// @Index(['userId', 'createdAt'])
+// @Index(['algorithm', 'createdAt'])
 export class Recommendation {
   @PrimaryGeneratedColumn('uuid')
   id: string;

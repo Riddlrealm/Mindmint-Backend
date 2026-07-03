@@ -18,8 +18,8 @@ export enum RatingChangeReason {
 }
 
 @Entity('rating_history')
-@Index(['playerRatingId', 'createdAt'])
-@Index(['createdAt'])
+// @Index(['playerRatingId', 'createdAt'])
+// @Index(['createdAt'])
 export class RatingHistory {
   @PrimaryGeneratedColumn('uuid')
   id: string;

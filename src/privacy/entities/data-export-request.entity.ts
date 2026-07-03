@@ -33,8 +33,8 @@ export enum ExportScope {
 
 @Entity('data_export_requests')
 @Index(['userId'])
-@Index(['status'])
-@Index(['createdAt'])
+// @Index(['status'])
+// @Index(['createdAt'])
 export class DataExportRequest {
   @PrimaryGeneratedColumn('uuid')
   id: string;

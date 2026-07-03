@@ -11,8 +11,8 @@ import {
 import { SeasonalEvent } from './seasonal-event.entity';
 
 @Entity('event_puzzles')
-@Index(['eventId', 'category'])
-@Index(['eventId', 'isActive'])
+// @Index(['eventId', 'category'])
+// @Index(['eventId', 'isActive'])
 export class EventPuzzle {
   @PrimaryGeneratedColumn('uuid')
   id: string;

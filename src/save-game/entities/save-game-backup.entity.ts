@@ -18,9 +18,9 @@ export enum BackupReason {
 }
 
 @Entity('save_game_backups')
-@Index(['saveGameId', 'createdAt'])
-@Index(['userId', 'createdAt'])
-@Index(['expiresAt'])
+// @Index(['saveGameId', 'createdAt'])
+// @Index(['userId', 'createdAt'])
+// @Index(['expiresAt'])
 export class SaveGameBackup {
   @PrimaryGeneratedColumn('uuid')
   id: string;

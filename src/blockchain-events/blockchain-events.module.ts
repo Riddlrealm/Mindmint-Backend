@@ -1,5 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { HttpModule } from '@nestjs/axios';
 import { ScheduleModule } from '@nestjs/schedule';
 import { ConfigModule } from '@nestjs/config';
 
@@ -12,6 +13,7 @@ import { BlockchainEventsController } from './blockchain-events.controller';
 @Module({
   imports: [
     TypeOrmModule.forFeature([OnChainEvent, DeadLetterEvent]),
+    HttpModule,
     ScheduleModule,
     ConfigModule,
   ],

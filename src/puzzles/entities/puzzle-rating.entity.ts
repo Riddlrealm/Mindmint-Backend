@@ -13,7 +13,7 @@ import { Puzzle } from './puzzle.entity';
 
 @Entity('puzzle_ratings')
 @Index(['userId', 'puzzleId'], { unique: true })
-@Index(['puzzleId', 'rating'])
+// @Index(['puzzleId', 'rating'])
 export class PuzzleRating {
   @PrimaryGeneratedColumn('uuid')
   id: string;

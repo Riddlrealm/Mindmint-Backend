@@ -14,8 +14,8 @@ export enum SeasonStatus {
 }
 
 @Entity('seasons')
-@Index(['status'])
-@Index(['startDate', 'endDate'])
+// @Index(['status'])
+// @Index(['startDate', 'endDate'])
 export class Season {
   @PrimaryGeneratedColumn('uuid')
   id: string;

@@ -12,7 +12,7 @@ import { WeeklyChallenge } from './weekly-challenge.entity';
 
 @Entity('weekly_challenge_completions')
 @Index(['userId', 'weeklyChallengeId'], { unique: true })
-@Index(['userId', 'completedAt'])
+// @Index(['userId', 'completedAt'])
 export class WeeklyChallengeCompletion {
   @PrimaryGeneratedColumn('uuid')
   id: string;

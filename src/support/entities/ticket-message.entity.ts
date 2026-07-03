@@ -11,7 +11,7 @@ import { SupportTicket } from './support-ticket.entity';
 
 @Entity('ticket_messages')
 @Index(['ticketId'])
-@Index(['authorId'])
+// @Index(['authorId'])
 export class TicketMessage {
   @PrimaryGeneratedColumn('uuid')
   id: string;

@@ -8,8 +8,8 @@ import {
 } from 'typeorm';
 
 @Entity('tournament_spectators')
-@Index(['tournamentId', 'userId'])
-@Index(['matchId', 'userId'])
+// @Index(['tournamentId', 'userId'])
+// @Index(['matchId', 'userId'])
 @Index(['joinedAt'])
 export class TournamentSpectator {
   @PrimaryGeneratedColumn('uuid')

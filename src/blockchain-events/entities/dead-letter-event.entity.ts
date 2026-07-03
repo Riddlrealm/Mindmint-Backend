@@ -10,8 +10,8 @@ import {
 @Entity('dead_letter_events')
 @Index(['originalEventId'])
 @Index(['eventType'])
-@Index(['status'])
-@Index(['createdAt'])
+// @Index(['status'])
+// @Index(['createdAt'])
 export class DeadLetterEvent {
   @PrimaryGeneratedColumn('uuid')
   id: string;

@@ -20,8 +20,8 @@ export enum EnergyTransactionType {
 }
 
 @Entity('energy_transactions')
-@Index(['userId', 'createdAt'])
-@Index(['transactionType', 'createdAt'])
+// @Index(['userId', 'createdAt'])
+// @Index(['transactionType', 'createdAt'])
 export class EnergyTransaction {
   @PrimaryGeneratedColumn('uuid')
   id: string;

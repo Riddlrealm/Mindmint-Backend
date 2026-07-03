@@ -11,10 +11,10 @@ import {
 import { User } from '../../users/entities/user.entity';
 
 @Entity('game_sessions')
-@Index(['userId', 'startTime'])
+// @Index(['userId', 'startTime'])
 @Index(['sessionId'], { unique: true })
-@Index(['userId', 'isActive'])
-@Index(['endTime'])
+// @Index(['userId', 'isActive'])
+// @Index(['endTime'])
 export class GameSession {
   @PrimaryGeneratedColumn('uuid')
   id: string;

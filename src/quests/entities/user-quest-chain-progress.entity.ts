@@ -25,8 +25,8 @@ export interface BranchPath {
 }
 
 @Entity('user_quest_chain_progress')
-@Index(['userId', 'questChainId'])
-@Index(['userId', 'status'])
+// @Index(['userId', 'questChainId'])
+// @Index(['userId', 'status'])
 export class UserQuestChainProgress {
   @PrimaryGeneratedColumn('uuid')
   id: string;

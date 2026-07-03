@@ -13,8 +13,8 @@ import { UserAchievement } from './user-achievement.entity';
 import { AchievementConditionGroup } from '../types/achievement-condition.types';
 
 @Entity('achievements')
-@Index(['category', 'isActive'])
-@Index(['rarity'])
+// @Index(['category', 'isActive'])
+// @Index(['rarity'])
 export class Achievement {
   @PrimaryGeneratedColumn('uuid')
   id: string;

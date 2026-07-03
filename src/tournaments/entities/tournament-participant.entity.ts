@@ -13,8 +13,8 @@ import { User } from '../../users/entities/user.entity';
 
 @Entity('tournament_participants')
 @Index(['tournamentId', 'userId'], { unique: true })
-@Index(['tournamentId', 'status'])
-@Index(['userId', 'registeredAt'])
+// @Index(['tournamentId', 'status'])
+// @Index(['userId', 'registeredAt'])
 export class TournamentParticipant {
   @PrimaryGeneratedColumn('uuid')
   id: string;

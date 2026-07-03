@@ -50,9 +50,9 @@ export interface EventPayload {
 }
 
 @Entity('tutorial_analytics_events')
-@Index(['eventType', 'createdAt'])
-@Index(['userId', 'tutorialId'])
-@Index(['tutorialId', 'stepId'])
+// @Index(['eventType', 'createdAt'])
+// @Index(['userId', 'tutorialId'])
+// @Index(['tutorialId', 'stepId'])
 @Index(['sessionId'])
 export class TutorialAnalyticsEvent {
   @PrimaryGeneratedColumn('uuid')

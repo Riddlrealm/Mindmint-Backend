@@ -15,8 +15,8 @@ export enum EnergyBoostType {
 }
 
 @Entity('energy_boosts')
-@Index(['isActive'])
-@Index(['boostType'])
+// @Index(['isActive'])
+// @Index(['boostType'])
 export class EnergyBoost {
   @PrimaryGeneratedColumn('uuid')
   id: string;

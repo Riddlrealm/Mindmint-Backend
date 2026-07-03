@@ -19,7 +19,7 @@ import { PuzzleEditor } from './puzzle-editor.entity';
 import { CommunityReview } from './community-review.entity';
 
 @Entity('community_submissions')
-@Index(['status', 'createdAt'])
+// @Index(['status', 'createdAt'])
 @Index(['submittedBy'])
 @Index(['puzzleEditorId'])
 export class CommunitySubmission {
