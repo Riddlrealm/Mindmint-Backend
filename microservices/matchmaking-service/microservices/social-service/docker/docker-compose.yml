@@ -15,7 +15,7 @@ services:
       - DB_PORT=5432
       - DB_USER=${DB_USER:-postgres}
       - DB_PASSWORD=${DB_PASSWORD:-postgres}
-      - DB_NAME=${DB_NAME:-quest_service}
+      - DB_NAME=${DB_NAME:-mindmint_backend}
       - SOCIAL_DB_NAME=social_service
       - LOG_LEVEL=debug
     depends_on:
@@ -39,7 +39,7 @@ services:
     environment:
       - POSTGRES_USER=${DB_USER:-postgres}
       - POSTGRES_PASSWORD=${DB_PASSWORD:-postgres}
-      - POSTGRES_DB=${DB_NAME:-quest_service}
+      - POSTGRES_DB=${DB_NAME:-mindmint_backend}
     ports:
       - '5432:5432'
     volumes:

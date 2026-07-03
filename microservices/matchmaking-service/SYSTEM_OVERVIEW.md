@@ -1,4 +1,4 @@
-# Quest Service - Puzzle Management System
+# Mindmint - Puzzle Management System
 
 ## Overview
 
@@ -142,7 +142,7 @@ npm test
 # Database
 DATABASE_HOST=localhost
 DATABASE_PORT=5432
-DATABASE_NAME=quest_service
+DATABASE_NAME=mindmint_backend
 DATABASE_USER=postgres
 DATABASE_PASSWORD=password
 

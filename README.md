@@ -1,6 +1,6 @@
-# Quest Service
+# Mindmint
 
-Quest Service is a thought-provoking, single-player game designed to challenge players' logical thinking and reasoning skills. Dive into a world of cause-and-effect puzzles, logical sequences, and problem-solving challenges to prove your mastery over logic!
+Mindmint is a thought-provoking, single-player game designed to challenge players' logical thinking and reasoning skills. Dive into a world of cause-and-effect puzzles, logical sequences, and problem-solving challenges to prove your mastery over logic!
 
 ## 🚀 Features
 
@@ -11,7 +11,7 @@ Quest Service is a thought-provoking, single-player game designed to challenge p
 
 ## 🌟 Why This Matters to the Stellar Community
 
-Quest Service brings gamification and educational value to the Stellar ecosystem by:
+Mindmint brings gamification and educational value to the Stellar ecosystem by:
 
 - **Onboarding New Users**: Introduces blockchain concepts through engaging gameplay, making Stellar more accessible to non-technical users.
 - **Showcasing Soroban Capabilities**: Demonstrates practical use cases for Soroban smart contracts in gaming and NFT rewards.
@@ -49,22 +49,22 @@ We use Docker Compose to orchestrate the application, database, and microservice
    docker-compose up --build
    ```
 
-- This command starts PostgreSQL and all Node.js microservices. Hot Reload is enabled, so changes in your code will automatically update the running container.
+   This command starts PostgreSQL and all Node.js microservices. Hot Reload is enabled, so changes in your code will automatically update the running container.
 
 ### Service Access Points
 
 Once running, you can access the services at:
 
-- **Quest Service**: http://localhost:3000
+- **Mindmint API**: http://localhost:3000
 - **Notification Service**: http://localhost:3001
 - **Social Service**: http://localhost:3002
 - **Database (PostgreSQL)**: localhost:5432
 
-## Quick start (one command)
+## Quick Start (one command)
 
 ```bash
 npm run setup          # installs deps, copies .env, starts docker, smoke-tests
-npm run start:dev     # starts the API with hot reload
+npm run start:dev      # starts the API with hot reload
 ```
 
 Then open http://localhost:3000/health.
@@ -73,17 +73,23 @@ See **[CONTRIBUTING.md](./CONTRIBUTING.md)** for the full local dev guide, style
 
 ## Common Commands
 
-- **Stop everything**: Press Ctrl+C or run docker-compose down
-- **Rebuild after adding new dependencies**: docker-compose up --build
+- **Stop everything**: Press Ctrl+C or run `docker-compose down`
+- **Rebuild after adding new dependencies**: `docker-compose up --build`
 - **Run all CI checks locally**: `npm run verify` (lint + format + typecheck + tests)
 
 ## 💡 Contribute
 
-We welcome contributions from the community! Whether you're a developer, designer, or just passionate about logic games, Quest Service is open for you to add new puzzles, features, or help improve the game!
+We welcome contributions from the community! Whether you're a developer, designer, or just passionate about logic games, Mindmint is open for you to add new puzzles, features, or help improve the game!
+
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines.
 
 ## 📜 License
 
 This project is licensed under the MIT License.
+
+## 🔗 Repository
+
+[https://github.com/Riddlrealm/Mindmint-Backend](https://github.com/Riddlrealm/Mindmint-Backend)
 
 ## 🔑 Wallet Authentication (Stellar + Freighter)
 
@@ -116,9 +122,3 @@ This feature allows users to authenticate using their Stellar wallet (Freighter)
 - Rate limiting: 100 requests/minute
 - JWT expiry: 1 hour
 - Replay protection: timestamped challenges
-
----
-
-## Auto-generated contribution
-
-Added by bounty bot.

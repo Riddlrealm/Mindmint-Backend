@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { IEventHandler, BaseEvent, UserRegisteredEvent, PuzzleCompletedEvent, TournamentStartedEvent, TournamentEndedEvent } from '@quest-service/shared';
+import { IEventHandler, BaseEvent, UserRegisteredEvent, PuzzleCompletedEvent, TournamentStartedEvent, TournamentEndedEvent } from '@mindmint-backend/shared';
 
 @Injectable()
 export class UserRegisteredHandler implements IEventHandler<UserRegisteredEvent> {

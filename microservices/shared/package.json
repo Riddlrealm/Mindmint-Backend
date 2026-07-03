@@ -1,5 +1,5 @@
 {
-  "name": "@quest-service/shared",
+  "name": "@mindmint-backend/shared",
   "version": "0.0.1",
   "description": "Shared library for microservice communication patterns",
   "main": "dist/index.js",

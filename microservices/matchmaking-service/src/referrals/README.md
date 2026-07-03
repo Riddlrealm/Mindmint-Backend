@@ -1,6 +1,6 @@
 # Referral Program Module
 
-A comprehensive referral program implementation for the quest-service application that allows players to invite friends and earn rewards.
+A comprehensive referral program implementation for the mindmint-backend application that allows players to invite friends and earn rewards.
 
 ## Features
 

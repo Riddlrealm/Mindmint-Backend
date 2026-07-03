@@ -20,11 +20,11 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
-  quest-service:
+  mindmint-backend:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: quest_service
+    container_name: mindmint_backend
     ports:
       - "${PORT:-3000}:3000"
     environment:

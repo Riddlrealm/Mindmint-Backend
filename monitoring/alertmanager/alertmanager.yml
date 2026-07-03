@@ -1,6 +1,6 @@
 global:
   smtp_smarthost: 'localhost:587'
-  smtp_from: 'alerts@quest-service.com'
+  smtp_from: 'alerts@mindmint-backend.com'
   smtp_require_tls: false
 
 route:
@@ -20,13 +20,13 @@ route:
 receivers:
   - name: 'web.hook'
     webhook_configs:
-      - url: 'http://quest-service:3000/webhooks/alerts'
+      - url: 'http://mindmint-backend:3000/webhooks/alerts'
         send_resolved: true
 
   - name: 'critical-alerts'
     email_configs:
-      - to: 'admin@quest-service.com'
-        subject: '[CRITICAL] Quest Service Alert: {{ .GroupLabels.alertname }}'
+      - to: 'admin@mindmint-backend.com'
+        subject: '[CRITICAL] Mindmint Alert: {{ .GroupLabels.alertname }}'
         body: |
           {{ range .Alerts }}
           Alert: {{ .Annotations.summary }}
@@ -34,13 +34,13 @@ receivers:
           Labels: {{ range .Labels.SortedPairs }}{{ .Name }}={{ .Value }} {{ end }}
           {{ end }}
     webhook_configs:
-      - url: 'http://quest-service:3000/webhooks/critical-alerts'
+      - url: 'http://mindmint-backend:3000/webhooks/critical-alerts'
         send_resolved: true
 
   - name: 'warning-alerts'
     email_configs:
-      - to: 'devops@quest-service.com'
-        subject: '[WARNING] Quest Service Alert: {{ .GroupLabels.alertname }}'
+      - to: 'devops@mindmint-backend.com'
+        subject: '[WARNING] Mindmint Alert: {{ .GroupLabels.alertname }}'
         body: |
           {{ range .Alerts }}
           Alert: {{ .Annotations.summary }}

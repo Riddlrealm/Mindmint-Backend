@@ -1,7 +1,11 @@
 {
-  "name": "quest-service",
+  "name": "mindmint-backend",
   "version": "0.0.1",
-  "description": "Quest Service Backend",
+  "description": "Mindmint Backend - A thought-provoking puzzle game built on Stellar",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Riddlrealm/Mindmint-Backend.git"
+  },
   "private": true,
   "license": "MIT",
   "scripts": {

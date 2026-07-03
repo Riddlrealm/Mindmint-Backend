@@ -37,7 +37,7 @@
     "@nestjs/platform-express": "^10.4.4",
     "@nestjs/schedule": "^6.1.0",
     "@nestjs/typeorm": "^11.0.0",
-    "@quest-service/shared": "file:../shared",
+    "@mindmint-backend/shared": "file:../shared",
     "@stellar/stellar-sdk": "^13.3.0",
     "bullmq": "^5.67.1",
     "class-transformer": "^0.5.1",

@@ -1,4 +1,4 @@
-# Contributing to Quest Service
+# Contributing to Mindmint
 
 Thanks for your interest in contributing! This guide is intentionally short — it covers the **three things** that will get your PR merged fastest.
 

@@ -2,7 +2,7 @@
 
 ## Overview
 
-This document describes the professional inter-service communication system implemented for the Quest Service microservices architecture. The system provides both asynchronous event-driven communication and synchronous gRPC calls, with built-in retry mechanisms, dead letter queues, and service discovery.
+This document describes the professional inter-service communication system implemented for the Mindmint microservices architecture. The system provides both asynchronous event-driven communication and synchronous gRPC calls, with built-in retry mechanisms, dead letter queues, and service discovery.
 
 ## Architecture
 
@@ -58,7 +58,7 @@ NotificationCreatedEvent
 ### Publishing Events
 
 ```typescript
-import { EventPublisherService } from '@quest-service/shared';
+import { EventPublisherService } from '@mindmint-backend/shared';
 
 @Injectable()
 export class UserService {
@@ -82,7 +82,7 @@ export class UserService {
 ### Handling Events
 
 ```typescript
-import { IEventHandler, UserRegisteredEvent } from '@quest-service/shared';
+import { IEventHandler, UserRegisteredEvent } from '@mindmint-backend/shared';
 
 @Injectable()
 export class UserRegisteredHandler implements IEventHandler<UserRegisteredEvent> {
@@ -121,7 +121,7 @@ service NotificationService {
 ### Client Usage
 
 ```typescript
-import { GrpcClientService } from '@quest-service/shared';
+import { GrpcClientService } from '@mindmint-backend/shared';
 
 @Injectable()
 export class NotificationService {

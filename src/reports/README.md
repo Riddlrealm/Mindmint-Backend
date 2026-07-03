@@ -1,6 +1,6 @@
 # Reports Module
 
-A comprehensive reporting system for the quest service that allows players to report inappropriate content, offensive usernames, and abusive chat messages.
+A comprehensive reporting system for the Mindmint that allows players to report inappropriate content, offensive usernames, and abusive chat messages.
 
 ## Features
 

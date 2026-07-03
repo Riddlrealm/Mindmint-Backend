@@ -31,7 +31,7 @@ import { RewardsModule } from './rewards/rewards.module';
         port: configService.get<number>('DB_PORT', 5432),
         username: configService.get<string>('DB_USERNAME', 'postgres'),
         password: configService.get<string>('DB_PASSWORD', 'postgres'),
-        database: configService.get<string>('DB_DATABASE', 'quest_service'),
+        database: configService.get<string>('DB_DATABASE', 'mindmint_backend'),
         entities: [UserEnergy, EnergyBoost, UserStreak, UserCombo, Quest], // Added Quest entity
         synchronize: true, // Set to false in production
       }),

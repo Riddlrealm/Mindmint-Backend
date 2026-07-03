@@ -2,7 +2,7 @@
 
 ## Overview
 
-This document outlines the database architecture strategy for Quest Service microservices, focusing on schema isolation, connection management, and scalability.
+This document outlines the database architecture strategy for Mindmint microservices, focusing on schema isolation, connection management, and scalability.
 
 ## Database Architecture
 
@@ -21,7 +21,7 @@ We're implementing a **database-per-service** pattern with the following charact
 
 | Service | Database Name | Purpose | Replication |
 |----------|---------------|---------|-------------|
-| quest-service | quest_db | Main application database | Yes |
+| mindmint-backend | quest_db | Main application database | Yes |
 | game-session-service | game_session_db | Session management | Yes |
 | economy-service | economy_db | Transactions, shop, energy | Yes |
 | notification-service | notification_db | Notifications, templates | No |
@@ -78,7 +78,7 @@ We're implementing a **database-per-service** pattern with the following charact
 
 ### Connection Pools
 
-#### Main Service (quest-service)
+#### Main Service (mindmint-backend)
 ```yaml
 pool:
   min: 5
@@ -241,12 +241,12 @@ rm $BACKUP_FILE.gz*
 #### Database Users
 ```sql
 -- Service-specific users
-CREATE USER quest_service WITH PASSWORD 'secure_password';
+CREATE USER mindmint_backend WITH PASSWORD 'secure_password';
 CREATE USER game_session_service WITH PASSWORD 'secure_password';
 CREATE USER economy_service WITH PASSWORD 'secure_password';
 
 -- Grant specific privileges
-GRANT ALL PRIVILEGES ON DATABASE quest_db TO quest_service;
+GRANT ALL PRIVILEGES ON DATABASE quest_db TO mindmint_backend;
 GRANT ALL PRIVILEGES ON DATABASE game_session_db TO game_session_service;
 GRANT ALL PRIVILEGES ON DATABASE economy_db TO economy_service;
 ```
@@ -286,7 +286,7 @@ GRANT ALL PRIVILEGES ON DATABASE economy_db TO economy_service;
 #### Resource Allocation
 ```yaml
 resources:
-  quest_service:
+  mindmint_backend:
     cpu: 2 cores
     memory: 4GB
     storage: 100GB SSD

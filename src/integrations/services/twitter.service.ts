@@ -42,7 +42,7 @@ export class TwitterService {
         achievement: { name: string; description: string; achievementId: string },
         customMessage?: string,
     ): TwitterShareResult {
-        const defaultText = `🏆 I just unlocked "${achievement.name}" on Quest Service!\n\n${achievement.description}\n\n#QuestService #Gaming #Achievement`;
+        const defaultText = `🏆 I just unlocked "${achievement.name}" on Mindmint!\n\n${achievement.description}\n\n#QuestService #Gaming #Achievement`;
         const text = customMessage || defaultText;
         const url = `${this.appUrl}/achievements/${achievement.achievementId}`;
         const shareUrl = this.generateShareUrl(text, url);
@@ -127,7 +127,7 @@ export class TwitterService {
         score?: number;
         timeSeconds?: number;
     }): string {
-        let text = `🧩 I just completed "${puzzleData.puzzleName}" on Quest Service!`;
+        let text = `🧩 I just completed "${puzzleData.puzzleName}" on Mindmint!`;
 
         if (puzzleData.score !== undefined) {
             text += `\n⭐ Score: ${puzzleData.score}`;

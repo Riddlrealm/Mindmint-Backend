@@ -1,6 +1,6 @@
 # Procedural Puzzle Generation System
 
-A comprehensive, production-ready procedural puzzle generation system for unlimited content creation in the Quest Service gaming platform.
+A comprehensive, production-ready procedural puzzle generation system for unlimited content creation in the Mindmint gaming platform.
 
 ## Overview
 
@@ -576,4 +576,4 @@ To extend the procedural generation system:
 
 ## License
 
-Part of the Quest Service project
+Part of the Mindmint project

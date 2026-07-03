@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { SharedModule } from '@quest-service/shared';
+import { SharedModule } from '@mindmint-backend/shared';
 import { AppDataSource } from '@/config/orm-config';
 import { FriendsModule } from '@/friends/friends.module';
 import { LeaderboardsModule } from '@/leaderboards/leaderboards.module';

@@ -1,6 +1,6 @@
 # A/B Testing and Feature Flag Service
 
-A comprehensive A/B testing framework and feature flag system for the quest-service platform.
+A comprehensive A/B testing framework and feature flag system for the mindmint-backend platform.
 
 ## Features
 

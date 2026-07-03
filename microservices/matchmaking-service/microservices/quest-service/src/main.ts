@@ -13,8 +13,8 @@ async function bootstrap() {
     }),
   );
 
-  const port = process.env.PORT || 3004; // Distinct port for quest-service
+  const port = process.env.PORT || 3004; // Distinct port for mindmint-backend
   await app.listen(port);
-  console.log(`Quest Service is running on: http://localhost:${port}`);
+  console.log(`Mindmint is running on: http://localhost:${port}`);
 }
 bootstrap();

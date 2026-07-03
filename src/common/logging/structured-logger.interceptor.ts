@@ -23,7 +23,7 @@ export interface StructuredLog {
 
 @Injectable()
 export class StructuredLoggerInterceptor implements NestInterceptor {
-  private serviceName = process.env.SERVICE_NAME || 'quest-service';
+  private serviceName = process.env.SERVICE_NAME || 'mindmint-backend';
 
   intercept(context: ExecutionContext, next: CallHandler): Observable<any> {
     const request = context.switchToHttp().getRequest<Request>();

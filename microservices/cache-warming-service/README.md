@@ -1,6 +1,6 @@
 # Cache Warming Service
 
-Independent NestJS service that proactively warms Redis with popular Quest Service data.
+Independent NestJS service that proactively warms Redis with popular Mindmint data.
 
 ## What It Does
 

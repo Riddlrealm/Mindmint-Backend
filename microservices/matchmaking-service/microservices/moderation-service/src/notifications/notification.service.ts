@@ -22,7 +22,7 @@ export class NotificationService {
         );
 
         // TODO: Integrate with notification-service via gRPC or RabbitMQ
-        // Example using EventPublisher from @quest-service/shared:
+        // Example using EventPublisher from @mindmint-backend/shared:
         // await this.eventPublisher.publishEvent('ModerationNotification', notification, 'moderation-service');
 
         // For now, we log the notification

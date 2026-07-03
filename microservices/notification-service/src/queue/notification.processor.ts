@@ -6,7 +6,7 @@ import { Repository } from 'typeorm';
 import { NotificationGateway } from '../common/gateways/notification.gateway';
 import { NotificationChannel, NotificationStatus } from '../notifications/entities/notification.entity';
 import { PushNotificationProvider } from '../notifications/providers/push-notification.provider';
-import { RabbitMQService } from '@quest-service/shared';
+import { RabbitMQService } from '@mindmint-backend/shared';
 import { Notification } from '../notifications/entities/notification.entity';
 import { WebhooksService } from '../webhooks/webhooks.service';
 

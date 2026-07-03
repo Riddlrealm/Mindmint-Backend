@@ -4,7 +4,7 @@ import { BullModule } from '@nestjs/bullmq';
 import { NotificationProcessor } from './notification.processor';
 import { GatewayModule } from '../common/gateways/gateway.module';
 import { PushNotificationProvider } from '../notifications/providers/push-notification.provider';
-import { RabbitMQService } from '@quest-service/shared';
+import { RabbitMQService } from '@mindmint-backend/shared';
 import { Notification } from '../notifications/entities/notification.entity';
 import { WebhooksModule } from '../webhooks/webhooks.module';
 

@@ -15,7 +15,7 @@ services:
       - DB_PORT=5432
       - DB_USER=${DB_USER:-postgres}
       - DB_PASSWORD=${DB_PASSWORD:-postgres}
-      - DB_NAME=${DB_NAME:-quest_service}
+      - DB_NAME=${DB_NAME:-mindmint_backend}
       - NOTIFICATION_DB_NAME=notification_service
       - REDIS_HOST=redis
       - REDIS_PORT=6379

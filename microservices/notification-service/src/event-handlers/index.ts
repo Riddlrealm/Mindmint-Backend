@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { IEventHandler, BaseEvent } from '@quest-service/shared';
+import { IEventHandler, BaseEvent } from '@mindmint-backend/shared';
 import { NotificationsService } from '../notifications/notifications.service';
 
 function extractPushData(event: BaseEvent) {

@@ -10,7 +10,7 @@ import { MetricsService } from './metrics.service';
         enabled: true,
         config: {
           labels: {
-            app: 'quest-service',
+            app: 'mindmint-backend',
             version: process.env.APP_VERSION || '1.0.0',
           },
         },

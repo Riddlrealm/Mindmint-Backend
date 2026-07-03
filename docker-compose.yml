@@ -3,7 +3,7 @@ version: '3.8'
 services:
   postgres:
     image: postgres:15-alpine
-    container_name: quest_postgres
+    container_name: mindmint_postgres
     ports:
       - "5432:5432"
     environment:
@@ -14,17 +14,17 @@ services:
       - postgres_data:/var/lib/postgresql/data
       - ./docker/postgres/init-databases.sh:/docker-entrypoint-initdb.d/init-database.sh
     networks:
-      - quest-network
+      - mindmint-network
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-postgres}"]
       interval: 5s
       timeout: 5s
       retries: 5
-  quest-service:
+  mindmint-backend:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: quest_service
+    container_name: mindmint_backend
     ports:
       - "${PORT:-3000}:3000"
     environment:
@@ -33,7 +33,7 @@ services:
       - DB_PORT=5432
       - DB_USER=${DB_USER:-postgres}
       - DB_PASSWORD=${DB_PASSWORD:-password}
-      - DB_NAME=quest_db
+      - DB_NAME=mindmint_db
       - DB_READ_HOST=postgres
       - JAEGER_ENDPOINT=http://jaeger:14268/api/traces
     volumes:
@@ -43,7 +43,7 @@ services:
       postgres:
         condition: service_healthy
     networks:
-      - quest-network
+      - mindmint-network
     logging: &logging_config
       driver: "json-file"
       options:
@@ -68,7 +68,7 @@ services:
       - ./microservices/notification-service:/usr/src/app
       - /usr/src/app/node_modules
     networks:
-      - quest-network
+      - mindmint-network
     logging: *logging_config
   
   social-service:
@@ -89,7 +89,7 @@ services:
       - ./microservices/social-service:/usr/src/app
       - /usr/src/app/node_modules
     networks:
-      - quest-network
+      - mindmint-network
     logging: *logging_config
   
   analytics-service:
@@ -117,7 +117,7 @@ services:
       redis:
         condition: service_healthy
     networks:
-      - quest-network
+      - mindmint-network
     logging: *logging_config
 
   cache-warming-service:
@@ -149,7 +149,7 @@ services:
       redis:
         condition: service_healthy
     networks:
-      - quest-network
+      - mindmint-network
     logging: *logging_config
   
   recommendation-service:
@@ -177,7 +177,7 @@ services:
       redis:
         condition: service_healthy
     networks:
-      - quest-network
+      - mindmint-network
     logging: *logging_config
 
   achievement-service:
@@ -205,7 +205,7 @@ services:
       postgres:
         condition: service_healthy
     networks:
-      - quest-network
+      - mindmint-network
     logging: *logging_config
 
   puzzle-engine:
@@ -232,7 +232,7 @@ services:
       postgres:
         condition: service_healthy
     networks:
-      - quest-network
+      - mindmint-network
     logging: *logging_config
 
   player-service:
@@ -260,7 +260,7 @@ services:
       postgres:
         condition: service_healthy
     networks:
-      - quest-network
+      - mindmint-network
     logging: *logging_config
 
   wallet-service:
@@ -287,7 +287,7 @@ services:
       postgres:
         condition: service_healthy
     networks:
-      - quest-network
+      - mindmint-network
     logging: *logging_config
 
   payment-service:
@@ -314,7 +314,7 @@ services:
       postgres:
         condition: service_healthy
     networks:
-      - quest-network
+      - mindmint-network
     logging: *logging_config
 
   moderation-service:
@@ -336,12 +336,12 @@ services:
       - ./microservices/moderation-service:/usr/src/app
       - /usr/src/app/node_modules
     networks:
-      - quest-network
+      - mindmint-network
     logging: *logging_config
 
   prometheus:
     image: prom/prometheus:latest
-    container_name: quest_prometheus
+    container_name: mindmint_prometheus
     ports:
       - "9090:9090"
     volumes:
@@ -349,45 +349,45 @@ services:
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
     networks:
-      - quest-network
+      - mindmint-network
 
 
   loki:
     image: grafana/loki:2.8.2
-    container_name: quest_loki
+    container_name: mindmint_loki
     ports:
       - "3100:3100"
     command: -config.file=/etc/loki/config.yaml
     volumes:
       - ./docker/monitoring/loki-config.yaml:/etc/loki/config.yaml
     networks:
-      - quest-network
+      - mindmint-network
 
   promtail:
     image: grafana/promtail:2.8.2
-    container_name: quest_promtail
+    container_name: mindmint_promtail
     volumes:
       - /var/lib/docker/containers:/var/lib/docker/containers:ro
       - ./docker/monitoring/promtail-config.yaml:/etc/promtail/config.yaml
     command: -config.file=/etc/promtail/config.yaml
     networks:
-      - quest-network
+      - mindmint-network
 
   jaeger:
     image: jaegertracing/all-in-one:1.47
-    container_name: quest_jaeger
+    container_name: mindmint_jaeger
     ports:
       - "16686:16686"
       - "14268:14268"
     environment:
       - COLLECTOR_ZIPKIN_HTTP_PORT=:9411
     networks:
-      - quest-network
+      - mindmint-network
 
 
   grafana:
     image: grafana/grafana:latest
-    container_name: quest_grafana
+    container_name: mindmint_grafana
     ports:
       - "3003:3000"
     environment:
@@ -397,7 +397,7 @@ services:
       - prometheus
       - loki
     networks:
-      - quest-network
+      - mindmint-network
 
 
   redis:
@@ -416,7 +416,7 @@ services:
       timeout: 3s
       retries: 5
     networks:
-      - quest-network
+      - mindmint-network
     restart: unless-stopped
 
   rabbitmq:
@@ -445,5 +445,5 @@ volumes:
   redis_data:
   rabbitmq_data:
 networks:
-  quest-network:
+  mindmint-network:
     driver: bridge

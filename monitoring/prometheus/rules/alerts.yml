@@ -1,5 +1,5 @@
 groups:
-  - name: quest-service-alerts
+  - name: mindmint-backend-alerts
     rules:
       # Service Health Alerts
       - alert: ServiceDown

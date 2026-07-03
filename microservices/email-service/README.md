@@ -155,8 +155,8 @@ curl -X POST http://localhost:3006/emails/send \
     "toEmail": "user@example.com",
     "toName": "John Doe",
     "subject": "Welcome!",
-    "htmlContent": "<h1>Hello!</h1><p>Welcome to Quest Service.</p>",
-    "textContent": "Hello! Welcome to Quest Service."
+    "htmlContent": "<h1>Hello!</h1><p>Welcome to Mindmint.</p>",
+    "textContent": "Hello! Welcome to Mindmint."
   }'
 ```
 
@@ -180,7 +180,7 @@ curl -X POST http://localhost:3006/templates \
   -H "Content-Type: application/json" \
   -d '{
     "name": "welcome",
-    "subject": "Welcome to Quest Service, {{name}}!",
+    "subject": "Welcome to Mindmint, {{name}}!",
     "htmlBody": "<h1>Hello {{name}}!</h1><p>Click <a href=\"{{activationLink}}\">here</a> to activate.</p>",
     "textBody": "Hello {{name}}! Visit {{activationLink}} to activate.",
     "category": "welcome"

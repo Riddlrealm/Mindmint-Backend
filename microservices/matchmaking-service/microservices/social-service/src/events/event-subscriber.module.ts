@@ -1,5 +1,5 @@
 import { Module, OnModuleInit } from '@nestjs/common';
-import { EventBusService, RabbitMQService } from '@quest-service/shared';
+import { EventBusService, RabbitMQService } from '@mindmint-backend/shared';
 import { 
   UserRegisteredHandler,
   PuzzleCompletedHandler,

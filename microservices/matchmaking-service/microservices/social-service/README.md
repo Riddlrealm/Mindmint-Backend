@@ -177,7 +177,7 @@ DB_HOST=localhost
 DB_PORT=5432
 DB_USER=postgres
 DB_PASSWORD=postgres
-DB_NAME=quest_service
+DB_NAME=mindmint_backend
 
 # WebSocket
 WEBSOCKET_PORT=3001
@@ -271,4 +271,4 @@ UNLICENSED
 
 ## Support
 
-For issues or questions about the Social Service, please refer to the main quest-service documentation.
+For issues or questions about the Social Service, please refer to the main mindmint-backend documentation.

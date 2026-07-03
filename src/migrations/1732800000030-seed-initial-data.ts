@@ -69,7 +69,7 @@ export class SeedInitialData1732800000030 implements MigrationInterface {
     // Create admin user
     await queryRunner.query(`
       INSERT INTO users (id, username, first_name, last_name, email, password, role, status, preferences, profile, metadata) VALUES
-      ('${this.generateUUID()}', 'admin', 'System', 'Administrator', 'admin@quest-service.com', '$2b$10$hash_placeholder', 'admin', 'active',
+      ('${this.generateUUID()}', 'admin', 'System', 'Administrator', 'admin@mindmint-backend.com', '$2b$10$hash_placeholder', 'admin', 'active',
         '{"theme": "dark", "notifications": {"email": true, "push": true}}',
         '{"bio": "System administrator account"}',
         '{"emailVerified": true, "loginCount": 0}');

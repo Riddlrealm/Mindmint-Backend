@@ -4,7 +4,7 @@ services:
   # ELK Stack for Centralized Logging
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:8.15.0
-    container_name: quest_elasticsearch
+    container_name: mindmint_elasticsearch
     environment:
       - discovery.type=single-node
       - xpack.security.enabled=false
@@ -14,11 +14,11 @@ services:
     volumes:
       - elasticsearch_data:/usr/share/elasticsearch/data
     networks:
-      - quest-network
+      - mindmint-network
 
   logstash:
     image: docker.elastic.co/logstash/logstash:8.15.0
-    container_name: quest_logstash
+    container_name: mindmint_logstash
     ports:
       - "5044:5044"
       - "9600:9600"
@@ -28,11 +28,11 @@ services:
     depends_on:
       - elasticsearch
     networks:
-      - quest-network
+      - mindmint-network
 
   kibana:
     image: docker.elastic.co/kibana/kibana:8.15.0
-    container_name: quest_kibana
+    container_name: mindmint_kibana
     ports:
       - "5601:5601"
     environment:
@@ -40,12 +40,12 @@ services:
     depends_on:
       - elasticsearch
     networks:
-      - quest-network
+      - mindmint-network
 
   # Prometheus for Metrics Collection
   prometheus:
     image: prom/prometheus:v2.53.0
-    container_name: quest_prometheus
+    container_name: mindmint_prometheus
     ports:
       - "9090:9090"
     volumes:
@@ -60,12 +60,12 @@ services:
       - '--storage.tsdb.retention.time=200h'
       - '--web.enable-lifecycle'
     networks:
-      - quest-network
+      - mindmint-network
 
   # Grafana for Visualization
   grafana:
     image: grafana/grafana:11.1.0
-    container_name: quest_grafana
+    container_name: mindmint_grafana
     ports:
       - "3003:3000"
     environment:
@@ -78,12 +78,12 @@ services:
     depends_on:
       - prometheus
     networks:
-      - quest-network
+      - mindmint-network
 
   # Jaeger for Distributed Tracing
   jaeger:
     image: jaegertracing/all-in-one:1.54
-    container_name: quest_jaeger
+    container_name: mindmint_jaeger
     ports:
       - "16686:16686"
       - "14268:14268"
@@ -91,23 +91,23 @@ services:
     environment:
       - COLLECTOR_OTLP_ENABLED=true
     networks:
-      - quest-network
+      - mindmint-network
 
   # AlertManager for Alerting
   alertmanager:
     image: prom/alertmanager:v0.27.0
-    container_name: quest_alertmanager
+    container_name: mindmint_alertmanager
     ports:
       - "9093:9093"
     volumes:
       - ./monitoring/alertmanager/alertmanager.yml:/etc/alertmanager/alertmanager.yml
     networks:
-      - quest-network
+      - mindmint-network
 
   # Node Exporter for System Metrics
   node-exporter:
     image: prom/node-exporter:v1.8.1
-    container_name: quest_node_exporter
+    container_name: mindmint_node_exporter
     ports:
       - "9100:9100"
     volumes:
@@ -120,7 +120,7 @@ services:
       - '--path.sysfs=/host/sys'
       - '--collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)($$|/)'
     networks:
-      - quest-network
+      - mindmint-network
 
 volumes:
   elasticsearch_data:
@@ -128,5 +128,5 @@ volumes:
   grafana_data:
 
 networks:
-  quest-network:
+  mindmint-network:
     external: true

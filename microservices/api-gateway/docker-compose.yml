@@ -14,7 +14,7 @@ services:
       - JWT_SECRET=${JWT_SECRET}
       - JWT_EXPIRES_IN=1h
       - SOCIAL_SERVICE_URL=http://social-service:3001
-      - QUEST_SERVICE_URL=http://quest-service:3002
+      - QUEST_SERVICE_URL=http://mindmint-backend:3002
       - RATE_LIMIT_TTL=60
       - RATE_LIMIT_MAX=100
       - RATE_LIMIT_MAX_AUTHENTICATED=200

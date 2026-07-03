@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { BullModule } from '@nestjs/bullmq';
-import { SharedModule } from '@quest-service/shared';
+import { SharedModule } from '@mindmint-backend/shared';
 import { AppDataSource } from './config/orm-config';
 import { EventsModule } from './events/events.module';
 import { MetricsModule } from './metrics/metrics.module';

@@ -122,7 +122,7 @@ describe('TwitterService', () => {
                 json: () => Promise.resolve({ data: { id: 'tweet-123' } }),
             });
 
-            const result = await service.postTweet('mock-access-token', 'Hello from Quest Service!');
+            const result = await service.postTweet('mock-access-token', 'Hello from Mindmint!');
 
             expect(result.success).toBe(true);
             expect(result.shareUrl).toContain('tweet-123');

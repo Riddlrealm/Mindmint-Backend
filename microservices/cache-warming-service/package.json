@@ -1,7 +1,7 @@
 {
   "name": "cache-warming-service",
   "version": "0.0.1",
-  "description": "Proactive Redis cache warming service for Quest Service",
+  "description": "Proactive Redis cache warming service for Mindmint",
   "private": true,
   "license": "UNLICENSED",
   "scripts": {

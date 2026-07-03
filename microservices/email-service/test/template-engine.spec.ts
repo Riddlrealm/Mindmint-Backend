@@ -26,9 +26,9 @@ describe('TemplateEngineService', () => {
 
     it('should render template with multiple variables', () => {
       const template = 'Hi {{firstName}} {{lastName}}, welcome to {{company}}!';
-      const data = { firstName: 'John', lastName: 'Doe', company: 'Quest Service' };
+      const data = { firstName: 'John', lastName: 'Doe', company: 'Mindmint' };
       const result = service.render(template, data);
-      expect(result).toBe('Hi John Doe, welcome to Quest Service!');
+      expect(result).toBe('Hi John Doe, welcome to Mindmint!');
     });
 
     it('should handle nested objects', () => {
@@ -82,9 +82,9 @@ describe('TemplateEngineService', () => {
     });
 
     it('should get current year', () => {
-      const template = '© {{currentYear}} Quest Service';
+      const template = '© {{currentYear}} Mindmint';
       const result = service.render(template, {});
-      expect(result).toBe(`© ${new Date().getFullYear()} Quest Service`);
+      expect(result).toBe(`© ${new Date().getFullYear()} Mindmint`);
     });
   });
 

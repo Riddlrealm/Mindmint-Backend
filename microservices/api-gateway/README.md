@@ -32,7 +32,7 @@ The gateway routes to the following microservices:
 
 #### Core Services
 - **Social Service** (`/api/social`) - User profiles and social features
-- **Quest Service** (`/api/quest`) - Quest management and progression
+- **Mindmint** (`/api/quest`) - Quest management and progression
 
 #### Game Services
 - **Achievement Service** (`/api/achievements`) - Achievement tracking
@@ -152,7 +152,7 @@ All requests are proxied to appropriate services based on URL prefixes:
 
 ```
 /api/social/*     → Social Service
-/api/quest/*      → Quest Service
+/api/quest/*      → Mindmint
 /api/achievements/* → Achievement Service
 # ... etc
 ```

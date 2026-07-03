@@ -1,4 +1,4 @@
-# Quest Service Monitoring Runbooks
+# Mindmint Monitoring Runbooks
 
 ## Table of Contents
 
@@ -32,13 +32,13 @@
 
 1. **Check Service Status**
    ```bash
-   docker ps | grep quest-service
-   docker logs quest-service --tail=100
+   docker ps | grep mindmint-backend
+   docker logs mindmint-backend --tail=100
    ```
 
 2. **Check Resource Usage**
    ```bash
-   docker stats quest-service
+   docker stats mindmint-backend
    ```
 
 3. **Check Network Connectivity**
@@ -48,7 +48,7 @@
 
 4. **Restart Service if Needed**
    ```bash
-   docker restart quest-service
+   docker restart mindmint-backend
    ```
 
 5. **Check Dependencies**
@@ -80,7 +80,7 @@
 
 1. **Check Error Logs**
    ```bash
-   docker logs quest-service | grep ERROR | tail -50
+   docker logs mindmint-backend | grep ERROR | tail -50
    ```
 
 2. **Analyze Error Patterns**
@@ -174,13 +174,13 @@
 1. **Check Memory Usage**
    ```bash
    free -h
-   docker stats quest-service
+   docker stats mindmint-backend
    ```
 
 2. **Analyze Memory Patterns**
    ```bash
    # Check for memory leaks
-   docker logs quest-service | grep -i "out of memory"
+   docker logs mindmint-backend | grep -i "out of memory"
    ```
 
 3. **Check Application Metrics**
@@ -189,7 +189,7 @@
 
 4. **Restart Service if Needed**
    ```bash
-   docker restart quest-service
+   docker restart mindmint-backend
    ```
 
 ### Prevention
@@ -218,7 +218,7 @@
 1. **Check CPU Usage**
    ```bash
    top
-   docker stats quest-service
+   docker stats mindmint-backend
    ```
 
 2. **Identify CPU-Intensive Processes**
@@ -438,8 +438,8 @@
 
 ## Emergency Contacts
 
-- **DevOps Team**: devops@quest-service.com
-- **Development Team**: dev@quest-service.com
+- **DevOps Team**: devops@mindmint-backend.com
+- **Development Team**: dev@mindmint-backend.com
 - **On-call Engineer**: +1-555-0123
 
 ## Escalation Procedures
@@ -453,7 +453,7 @@
 
 ### Service Outage Template
 ```
-Subject: [OUTAGE] Quest Service - [Service Name] Down
+Subject: [OUTAGE] Mindmint - [Service Name] Down
 
 Status: INVESTIGATING
 Impact: Users experiencing [specific impact]
@@ -469,7 +469,7 @@ Actions:
 
 ### Resolution Template
 ```
-Subject: [RESOLVED] Quest Service - [Service Name] Restored
+Subject: [RESOLVED] Mindmint - [Service Name] Restored
 
 Status: RESOLVED
 Duration: [total outage time]

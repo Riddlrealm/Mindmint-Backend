@@ -1,8 +1,8 @@
 {
   "dashboard": {
     "id": null,
-    "title": "Quest Service Overview",
-    "tags": ["quest-service"],
+    "title": "Mindmint Overview",
+    "tags": ["mindmint-backend"],
     "timezone": "browser",
     "panels": [
       {
@@ -11,7 +11,7 @@
         "type": "stat",
         "targets": [
           {
-            "expr": "up{job=~\"quest-service|notification-service|social-service|game-session-service|economy-service\"}",
+            "expr": "up{job=~\"mindmint-backend|notification-service|social-service|game-session-service|economy-service\"}",
             "legendFormat": "{{job}}"
           }
         ],
@@ -42,7 +42,7 @@
         "type": "graph",
         "targets": [
           {
-            "expr": "sum(rate(http_requests_total{job=~\"quest-service|notification-service|social-service|game-session-service|economy-service\"}[5m])) by (job)",
+            "expr": "sum(rate(http_requests_total{job=~\"mindmint-backend|notification-service|social-service|game-session-service|economy-service\"}[5m])) by (job)",
             "legendFormat": "{{job}}"
           }
         ],
@@ -59,7 +59,7 @@
         "type": "graph",
         "targets": [
           {
-            "expr": "histogram_quantile(0.95, sum(rate(http_request_duration_seconds_bucket{job=~\"quest-service|notification-service|social-service|game-session-service|economy-service\"}[5m])) by (le, job))",
+            "expr": "histogram_quantile(0.95, sum(rate(http_request_duration_seconds_bucket{job=~\"mindmint-backend|notification-service|social-service|game-session-service|economy-service\"}[5m])) by (le, job))",
             "legendFormat": "{{job}}"
           }
         ],
@@ -76,7 +76,7 @@
         "type": "graph",
         "targets": [
           {
-            "expr": "sum(rate(http_requests_total{job=~\"quest-service|notification-service|social-service|game-session-service|economy-service\",status=~\"5..\"}[5m])) by (job)",
+            "expr": "sum(rate(http_requests_total{job=~\"mindmint-backend|notification-service|social-service|game-session-service|economy-service\",status=~\"5..\"}[5m])) by (job)",
             "legendFormat": "{{job}}"
           }
         ],

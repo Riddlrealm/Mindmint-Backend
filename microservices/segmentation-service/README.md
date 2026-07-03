@@ -1,7 +1,7 @@
 # Segmentation Service
 
 Independent NestJS microservice that manages user cohorts for targeted campaigns,
-A/B testing, and personalization inside the Quest Service platform.
+A/B testing, and personalization inside the Mindmint platform.
 
 ## Highlights
 

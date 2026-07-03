@@ -1,7 +1,7 @@
 {
   "name": "segmentation-service",
   "version": "0.0.1",
-  "description": "User segmentation and audience microservice for Quest Service",
+  "description": "User segmentation and audience microservice for Mindmint",
   "private": true,
   "license": "UNLICENSED",
   "scripts": {

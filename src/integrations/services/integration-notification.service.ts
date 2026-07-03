@@ -56,7 +56,7 @@ export class IntegrationNotificationService {
                 where: { userId, provider: SocialProvider.TWITTER },
             });
             if (twitterAccount?.accessToken) {
-                const tweetText = `🏆 I just unlocked "${achievement.name}" on Quest Service!\n\n${achievement.description}\n\n#QuestService #Achievement`;
+                const tweetText = `🏆 I just unlocked "${achievement.name}" on Mindmint!\n\n${achievement.description}\n\n#QuestService #Achievement`;
                 result.twitter = await this.twitterService.postTweet(
                     twitterAccount.accessToken,
                     tweetText,

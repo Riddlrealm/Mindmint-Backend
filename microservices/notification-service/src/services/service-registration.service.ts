@@ -1,6 +1,6 @@
 import { Injectable, OnModuleInit, OnModuleDestroy } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import { ServiceRegistry, ServiceDiscovery } from '@quest-service/shared';
+import { ServiceRegistry, ServiceDiscovery } from '@mindmint-backend/shared';
 
 @Injectable()
 export class ServiceRegistrationService implements OnModuleInit, OnModuleDestroy {

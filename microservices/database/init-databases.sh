@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# Quest Service Database Initialization Script
+# Mindmint Database Initialization Script
 # This script creates separate databases for each microservice
 
 set -e
 
-echo "Initializing Quest Service databases..."
+echo "Initializing Mindmint databases..."
 
 # Database connection parameters
 DB_HOST=${DB_HOST:-localhost}
@@ -71,7 +71,7 @@ sleep 2
 # Create databases for each microservice
 echo "Creating microservice databases..."
 
-create_database "quest_db"
+create_database "mindmint_db"
 create_database "game_session_db"
 create_database "economy_db"
 create_database "notification_db"
@@ -81,8 +81,8 @@ create_database "recommendation_db"
 # Create service-specific users with limited privileges
 echo "Creating service users..."
 
-# Main quest service user (full access to quest_db)
-create_user "quest_service_user" "quest_secure_password_2024" "quest_db"
+# Main Mindmint user (full access to mindmint_db)
+create_user "mindmint_backend_user" "quest_secure_password_2024" "mindmint_db"
 
 # Game session service user
 create_user "game_session_service_user" "session_secure_password_2024" "game_session_db"
@@ -104,19 +104,19 @@ echo "Creating shared service user..."
 PGPASSWORD=$DB_PASSWORD psql -h $DB_HOST -p $DB_PORT -U $DB_USER -d postgres -c "
     DO \$\$
         BEGIN;
-            IF NOT EXISTS (SELECT FROM pg_roles WHERE rolname = 'quest_shared_user') THEN
-                CREATE USER quest_shared_user WITH PASSWORD 'shared_secure_password_2024';
+            IF NOT EXISTS (SELECT FROM pg_roles WHERE rolname = 'mindmint_shared_user') THEN
+                CREATE USER mindmint_shared_user WITH PASSWORD 'shared_secure_password_2024';
             END IF;
         COMMIT;
     \$\$" || true
 
 # Grant shared user read access to all databases
-for db in "quest_db" "game_session_db" "economy_db" "notification_db" "social_db" "recommendation_db"; do
+for db in "mindmint_db" "game_session_db" "economy_db" "notification_db" "social_db" "recommendation_db"; do
     echo "Granting shared user access to: $db"
     PGPASSWORD=$DB_PASSWORD psql -h $DB_HOST -p $DB_PORT -U $DB_USER -d postgres -c "
-        GRANT CONNECT ON DATABASE $db TO quest_shared_user;
-        GRANT USAGE ON SCHEMA public TO quest_shared_user;
-        GRANT SELECT ON ALL TABLES IN SCHEMA public TO quest_shared_user;" || true
+        GRANT CONNECT ON DATABASE $db TO mindmint_shared_user;
+        GRANT USAGE ON SCHEMA public TO mindmint_shared_user;
+        GRANT SELECT ON ALL TABLES IN SCHEMA public TO mindmint_shared_user;" || true
 done
 
 # Create monitoring and backup functions
@@ -166,7 +166,7 @@ PGPASSWORD=$DB_PASSWORD psql -h $DB_HOST -p $DB_PORT -U $DB_USER -d postgres -c 
 # Create monitoring views
 echo "Creating monitoring views..."
 
-for db in "quest_db" "game_session_db" "economy_db" "notification_db" "social_db" "recommendation_db"; do
+for db in "mindmint_db" "game_session_db" "economy_db" "notification_db" "social_db" "recommendation_db"; do
     echo "Creating monitoring views for: $db"
     PGPASSWORD=$DB_PASSWORD psql -h $DB_HOST -p $DB_PORT -U $DB_USER -d $db -c "
         CREATE OR REPLACE VIEW database_stats AS
@@ -298,7 +298,7 @@ PGPASSWORD=$DB_PASSWORD psql -h $DB_HOST -p $DB_PORT -U $DB_USER -d postgres -c 
 echo "Database initialization completed successfully!"
 echo ""
 echo "Summary of created databases:"
-echo "- quest_db (main service)"
+echo "- mindmint_db (main service)"
 echo "- game_session_db (session management)"
 echo "- economy_db (economy and transactions)"
 echo "- notification_db (notifications)"

@@ -18,7 +18,7 @@
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
     "paths": {
-      "@quest-service/shared": ["./src"]
+      "@mindmint-backend/shared": ["./src"]
     }
   },
   "include": ["src/**/*"],

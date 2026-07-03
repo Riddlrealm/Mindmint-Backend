@@ -6,7 +6,7 @@ export default registerAs('email', () => ({
   sendgrid: {
     apiKey: process.env.SENDGRID_API_KEY,
     fromEmail: process.env.SENDGRID_FROM_EMAIL || 'noreply@questservice.com',
-    fromName: process.env.SENDGRID_FROM_NAME || 'Quest Service',
+    fromName: process.env.SENDGRID_FROM_NAME || 'Mindmint',
   },
 
   ses: {
@@ -14,7 +14,7 @@ export default registerAs('email', () => ({
     accessKeyId: process.env.AWS_ACCESS_KEY_ID,
     secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
     fromEmail: process.env.SES_FROM_EMAIL || 'noreply@questservice.com',
-    fromName: process.env.SES_FROM_NAME || 'Quest Service',
+    fromName: process.env.SES_FROM_NAME || 'Mindmint',
   },
 
   queue: {

@@ -1,9 +1,9 @@
 apiVersion: 1
 
 providers:
-  - name: 'quest-service-dashboards'
+  - name: 'mindmint-backend-dashboards'
     orgId: 1
-    folder: 'Quest Service'
+    folder: 'Mindmint'
     type: file
     disableDeletion: false
     updateIntervalSeconds: 10

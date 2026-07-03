@@ -10,7 +10,7 @@ beforeAll(async () => {
     port: parseInt(process.env.DATABASE_PORT || '5432'),
     username: process.env.DATABASE_USER || 'test_user',
     password: process.env.DATABASE_PASSWORD || 'test_password',
-    database: process.env.DATABASE_NAME || 'quest_service_test',
+    database: process.env.DATABASE_NAME || 'mindmint_backend_test',
     entities: ['src/**/*.entity.ts'],
     synchronize: true,
     logging: false,

@@ -110,7 +110,7 @@ export class AlertingService {
       subtype: type,
       severity,
       message,
-      service: 'quest-service',
+      service: 'mindmint-backend',
     };
     
     this.logger.error(JSON.stringify(alertLog));

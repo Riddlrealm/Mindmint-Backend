@@ -2,12 +2,12 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { NotificationProcessor } from '../notification.processor';
 import { NotificationGateway } from '../../common/gateways/notification.gateway';
 import { PushNotificationProvider } from '../../notifications/providers/push-notification.provider';
-import { RabbitMQService } from '@quest-service/shared';
+import { RabbitMQService } from '@mindmint-backend/shared';
 import { WebhooksService } from '../../webhooks/webhooks.service';
 import { getRepositoryToken } from '@nestjs/typeorm';
 import { Notification } from '../../notifications/entities/notification.entity';
 
-jest.mock('@quest-service/shared', () => ({
+jest.mock('@mindmint-backend/shared', () => ({
   RabbitMQService: class RabbitMQService {},
 }));
 

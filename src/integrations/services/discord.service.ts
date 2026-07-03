@@ -25,7 +25,7 @@ export class DiscordService {
     private readonly defaultWebhookUrl?: string;
 
     constructor(private readonly configService: ConfigService) {
-        this.botName = this.configService.get<string>('DISCORD_BOT_NAME') || 'Quest Service Bot';
+        this.botName = this.configService.get<string>('DISCORD_BOT_NAME') || 'Mindmint Bot';
         this.defaultWebhookUrl = this.configService.get<string>('DISCORD_WEBHOOK_URL');
     }
 
@@ -49,7 +49,7 @@ export class DiscordService {
             fields: [
                 { name: 'Player', value: achievement.userId, inline: true },
             ],
-            footer: { text: 'Quest Service' },
+            footer: { text: 'Mindmint' },
             timestamp: new Date().toISOString(),
         };
 
@@ -84,7 +84,7 @@ export class DiscordService {
             title: `📊 Leaderboard: ${leaderboard.name}`,
             description: leaderboardText || 'No entries yet.',
             color: 0x5865f2, // Discord blurple
-            footer: { text: 'Quest Service Leaderboard' },
+            footer: { text: 'Mindmint Leaderboard' },
             timestamp: new Date().toISOString(),
         };
 
