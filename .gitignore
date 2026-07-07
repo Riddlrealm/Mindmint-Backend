@@ -77,3 +77,11 @@ coverage/coverage-summary.json
 
 # Lockfile fragments from npm i typos
 package-lock.json.bak
+
+# Build metadata / generated docs
+.idea/
+.vscode/.browse.VC.db
+.history/
+*.log.gz
+typedoc/
+api-docs/
