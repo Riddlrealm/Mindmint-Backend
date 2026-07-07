@@ -19,7 +19,6 @@ export class EventBusService implements IEventPublisher, OnModuleInit {
   constructor(private readonly configService: ConfigService) {}
 
   async onModuleInit() {
-    console.log('EventBus initialized');
   }
 
   async publish<T extends IEvent>(event: T): Promise<void> {
