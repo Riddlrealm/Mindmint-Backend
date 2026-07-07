@@ -21,7 +21,8 @@ Mindmint brings gamification and educational value to the Stellar ecosystem by:
 
 ## ⚙️ Tech Stack
 
-- **Backend**: NestJS, Soroban (Stellar), MongoDB/PostgreSQL
+- **Backend**: NestJS, PostgreSQL, Redis, RabbitMQ
+- **Blockchain**: Soroban (Stellar) smart contracts via @stellar/stellar-sdk
 - **Frontend**: React, TailwindCSS
 - **Blockchain**: Stellar for on-chain achievements and rewards
 - **Smart Contracts**: Soroban smart contracts for NFTs and token rewards
