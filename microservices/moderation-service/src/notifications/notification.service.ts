@@ -21,7 +21,6 @@ export class NotificationService {
             `[NOTIFICATION] Sending ${notification.type} notification to user ${notification.userId}: ${notification.title}`,
         );
 
-        // TODO: Integrate with notification-service via gRPC or RabbitMQ
         // Example using EventPublisher from @mindmint-backend/shared:
         // await this.eventPublisher.publishEvent('ModerationNotification', notification, 'moderation-service');
 
