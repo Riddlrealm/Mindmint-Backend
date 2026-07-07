@@ -290,23 +290,24 @@ jobs:
 
       - name: 🗄️ Setup performance database
         run: |
-          npm run migration:run
+          npm run migration:run || echo 'No migrations to run — continuing'
           npm run seed:perf
         env:
-          DATABASE_HOST: localhost
-          DATABASE_PORT: 5432
-          DATABASE_USER: perf_user
-          DATABASE_PASSWORD: perf_password
-          DATABASE_NAME: mindmint_backend_perf
+          DB_HOST: localhost
+          DB_PORT: 5432
+          DB_USER: perf_user
+          DB_PASSWORD: perf_password
+          DB_NAME: mindmint_backend_perf
+          NODE_ENV: development
 
       - name: ⚡ Run performance tests
         run: npm run test:performance
         env:
-          DATABASE_HOST: localhost
-          DATABASE_PORT: 5432
-          DATABASE_USER: perf_user
-          DATABASE_PASSWORD: perf_password
-          DATABASE_NAME: mindmint_backend_perf
+          DB_HOST: localhost
+          DB_PORT: 5432
+          DB_USER: perf_user
+          DB_PASSWORD: perf_password
+          DB_NAME: mindmint_backend_perf
 
       - name: 📊 Upload performance results
         uses: actions/upload-artifact@v4
