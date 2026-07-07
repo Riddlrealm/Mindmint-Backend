@@ -1,0 +1,15 @@
+# Default owners for any path not matched below.
+*                              @platform-team
+
+# Microservice ownership falls to the directory owner.
+/microservices/puzzles-service/*      @puzzles-team
+/microservices/achievement-service/*  @achievement-team
+/microservices/wallet-service/*       @wallet-team
+/microservices/social-service/*       @social-team
+
+# Critical infra paths only platform touches.
+/.github/                        @platform-team
+/package.json                   @platform-team
+/tsconfig.json                  @platform-team
+/Dockerfile                     @platform-team
+/docker-compose*.yml            @platform-team
