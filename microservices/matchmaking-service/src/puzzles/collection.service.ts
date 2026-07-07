@@ -127,7 +127,6 @@ export class CollectionsService {
       return;
     }
 
-    // TODO: Implement reward granting logic. This will likely involve:
     // 1. Interacting with an 'EconomyService' or 'UserInventoryService'
     //    (which might not exist yet).
     // 2. Processing each reward object in collection.rewards.

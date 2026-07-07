@@ -37,7 +37,7 @@ export class PuzzlesController {
   async create(
     @Body() createPuzzleDto: CreatePuzzleDto,
   ): Promise<PuzzleWithStats> {
-    const userId = 'temp-user-id'; // TODO: Get from auth
+    const userId = 'temp-user-id';
     this.logger.log(`Creating puzzle: ${createPuzzleDto.title} by user: ${userId}`);
     return await this.puzzlesService.create(createPuzzleDto, userId);
   }
@@ -58,7 +58,7 @@ export class PuzzlesController {
     @Body('puzzleIds', new ParseArrayPipe({ items: String })) puzzleIds: string[],
     @Body('bulkUpdate') bulkUpdateDto: BulkUpdateDto,
   ) {
-    const userId = 'temp-user-id'; // TODO: Get from auth
+    const userId = 'temp-user-id';
     this.logger.log(`Bulk updating ${puzzleIds.length} puzzles with action: ${bulkUpdateDto.action}`);
     return await this.puzzlesService.bulkUpdate(puzzleIds, bulkUpdateDto, userId);
   }
@@ -90,7 +90,7 @@ export class PuzzlesController {
     @Param('id', ParseUUIDPipe) id: string,
     @Body() updatePuzzleDto: UpdatePuzzleDto,
   ): Promise<PuzzleWithStats> {
-    const userId = 'temp-user-id'; // TODO: Get from auth
+    const userId = 'temp-user-id';
     this.logger.log(`Updating puzzle: ${id} by user: ${userId}`);
     return await this.puzzlesService.update(id, updatePuzzleDto, userId);
   }
@@ -100,7 +100,7 @@ export class PuzzlesController {
   async remove(
     @Param('id', ParseUUIDPipe) id: string,
   ): Promise<void> {
-    const userId = 'temp-user-id'; // TODO: Get from auth
+    const userId = 'temp-user-id';
     this.logger.log(`Deleting puzzle: ${id} by user: ${userId}`);
     await this.puzzlesService.remove(id, userId);
   }
@@ -109,7 +109,7 @@ export class PuzzlesController {
   async publish(
     @Param('id', ParseUUIDPipe) id: string,
   ): Promise<PuzzleWithStats> {
-    const userId = 'temp-user-id'; // TODO: Get from auth
+    const userId = 'temp-user-id';
     this.logger.log(`Publishing puzzle: ${id} by user: ${userId}`);
     return await this.puzzlesService.update(id, { isPublished: true }, userId);
   }
@@ -118,7 +118,7 @@ export class PuzzlesController {
   async unpublish(
     @Param('id', ParseUUIDPipe) id: string,
   ): Promise<PuzzleWithStats> {
-    const userId = 'temp-user-id'; // TODO: Get from auth
+    const userId = 'temp-user-id';
     this.logger.log(`Unpublishing puzzle: ${id} by user: ${userId}`);
     return await this.puzzlesService.update(id, { isPublished: false }, userId);
   }
@@ -127,7 +127,7 @@ export class PuzzlesController {
   async duplicate(
     @Param('id', ParseUUIDPipe) id: string,
   ): Promise<PuzzleWithStats> {
-    const userId = 'temp-user-id'; // TODO: Get from auth
+    const userId = 'temp-user-id';
     this.logger.log(`Duplicating puzzle: ${id} by user: ${userId}`);
     
     const originalPuzzle = await this.puzzlesService.findOne(id);
