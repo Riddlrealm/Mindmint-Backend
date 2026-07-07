@@ -13,3 +13,7 @@ RUN npm run build
 EXPOSE 3020
 
 CMD ["npm", "run", "start:prod"]
+
+# Healthcheck: NestJS typically exposes /health. Container probe will
+# declare unhealthy if 3 consecutive requests fail or timeout.
+HEALTHCHECK --interval=30s --timeout=3s --retries=3 CMD wget -qO- http://localhost:3000/health || exit 1
