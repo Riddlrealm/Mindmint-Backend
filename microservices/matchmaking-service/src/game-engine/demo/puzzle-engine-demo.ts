@@ -25,7 +25,6 @@ import { Logger } from '@nestjs/common';
 const logger = new Logger('PuzzleEngineDemo');
 
 async function main() {
-  console.log('🧩 Puzzle Engine Demo Starting...\n');
 
   // Initialize NestJS app
   const app = await NestFactory.createApplicationContext(AppModule, {
@@ -42,11 +41,8 @@ async function main() {
     // Initialize puzzle registry
     await puzzleRegistry.onModuleInit();
 
-    console.log('✅ Services initialized successfully\n');
 
     // Demo 1: Generate different puzzle types
-    console.log('🎲 Demo 1: Puzzle Generation');
-    console.log('='.repeat(50));
 
     const puzzleTypes = [
       PuzzleType.LOGIC_GRID,
@@ -97,7 +93,6 @@ async function main() {
             console.log(`   Constraints: ${currentState.currentState?.constraints?.length || 0}`);
           }
 
-          console.log();
         } catch (error) {
           console.log(
             `❌ Failed to generate ${type} at difficulty ${difficulty}: ${error.message}`,
@@ -107,8 +102,6 @@ async function main() {
     }
 
     // Demo 2: Scoring System
-    console.log('\n💯 Demo 2: Scoring System');
-    console.log('='.repeat(50));
 
     const testPuzzle = await puzzleGenerator.generatePuzzle(
       PuzzleType.SEQUENCE,
@@ -170,12 +163,9 @@ async function main() {
       console.log(
         `   Difficulty Multiplier: ${scoreResult.difficultyMultiplier}x`,
       );
-      console.log();
     }
 
     // Demo 3: Achievement System
-    console.log('\n🏆 Demo 3: Achievement System');
-    console.log('='.repeat(50));
 
     // Reset achievements for demo
     achievementsService.resetAchievements();
@@ -274,7 +264,6 @@ async function main() {
       );
 
       if (newAchievements.length > 0) {
-        console.log(`   🎉 New Achievements Unlocked:`);
         newAchievements.forEach((achievement) => {
           console.log(`   - ${achievement.name} (${achievement.tier})`);
           console.log(`     ${achievement.description}`);
@@ -292,12 +281,9 @@ async function main() {
       console.log(
         `   Progress: ${playerAchievements.unlockedCount}/${playerAchievements.totalCount} achievements`,
       );
-      console.log();
     }
 
     // Demo 4: Registry and Available Puzzles
-    console.log('\n📚 Demo 4: Puzzle Registry');
-    console.log('='.repeat(50));
 
     const registeredTypes = puzzleRegistry.getRegisteredTypes();
     console.log(`Available Puzzle Types: ${registeredTypes.length}`);
@@ -314,7 +300,6 @@ async function main() {
     );
 
     // Test creating instances
-    console.log('\n🔧 Testing Puzzle Instance Creation:');
     for (const type of registeredTypes.slice(0, 3)) {
       // Test first 3 types
       try {
@@ -330,17 +315,6 @@ async function main() {
       }
     }
 
-    console.log('\n🎉 Demo completed successfully!');
-    console.log('\nThe puzzle engine is fully functional with:');
-    console.log('✅ Multiple puzzle types (Logic Grid, Sequence, Spatial)');
-    console.log('✅ Difficulty scaling system');
-    console.log('✅ Comprehensive scoring system');
-    console.log('✅ Achievement system with progressive unlocks');
-    console.log('✅ Puzzle generation with randomization');
-    console.log('✅ Undo/Redo functionality');
-    console.log('✅ State management and validation');
-    console.log('✅ Hint system integration');
-    console.log('✅ Analytics and performance tracking');
   } catch (error) {
     logger.error('Demo failed:', error.message);
     console.error('\n❌ Demo failed:', error.message);
