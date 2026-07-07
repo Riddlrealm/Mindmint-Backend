@@ -44,6 +44,7 @@ All four must pass. If `format:check` fails, run `npm run format` to auto-fix.
 - **NestJS**: one module per folder under `src/`. Each module exports a `*.module.ts` plus a controller, service, and DTOs.
 - **Naming**: `kebab-case` for files & folders, `PascalCase` for classes, `camelCase` for variables/functions.
 - **Imports**: use the explicit relative path (e.g. `../users/users.module`) — avoid deep `@/` aliases unless one already exists.
+- **Async/await**: never call `.then()` on NestJS service methods; always `await` or return the promise so interceptors and exception filters can subscribe properly.
 - **Don't**: disable ESLint rules, add `// @ts-ignore`, or weaken `tsconfig.json` to make errors go away. Fix the code.
 
 ### Common bug sources to avoid
