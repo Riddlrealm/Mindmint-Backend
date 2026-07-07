@@ -135,18 +135,15 @@ export class StorageService {
     data: Buffer,
     metadata?: Record<string, any>,
   ): Promise<{ url: string; key: string; size: number }> {
-    // TODO: Implement S3 storage using AWS SDK
     // This requires configuration with @aws-sdk/client-s3
     throw new BadRequestException('S3 storage not yet implemented');
   }
 
   private async retrieveS3(key: string): Promise<Buffer> {
-    // TODO: Implement S3 retrieval
     throw new BadRequestException('S3 storage not yet implemented');
   }
 
   private async deleteS3(key: string): Promise<void> {
-    // TODO: Implement S3 deletion
   }
 
   // ==================== Azure Storage (Placeholder) ====================
@@ -156,16 +153,13 @@ export class StorageService {
     data: Buffer,
     metadata?: Record<string, any>,
   ): Promise<{ url: string; key: string; size: number }> {
-    // TODO: Implement Azure Blob Storage using @azure/storage-blob
     throw new BadRequestException('Azure storage not yet implemented');
   }
 
   private async retrieveAzure(key: string): Promise<Buffer> {
-    // TODO: Implement Azure retrieval
     throw new BadRequestException('Azure storage not yet implemented');
   }
 
   private async deleteAzure(key: string): Promise<void> {
-    // TODO: Implement Azure deletion
   }
 }
