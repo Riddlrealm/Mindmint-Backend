@@ -16,7 +16,6 @@ const config = {
 };
 
 async function runMigration() {
-  console.log('Running A/B testing migration...');
   console.log(`Connecting to: ${config.host}:${config.port}/${config.database}`);
   
   const dataSource = new DataSource({
@@ -32,7 +31,6 @@ async function runMigration() {
 
   try {
     await dataSource.initialize();
-    console.log('Database connection established.');
     
     // Run the specific A/B testing migration
     const migrationName = '1743000000001-create-ab-testing-tables.ts';
@@ -108,11 +106,8 @@ async function runMigration() {
     // Execute SQL
     await dataSource.query(sql);
     
-    console.log('✅ A/B testing tables created successfully!');
-    console.log('✅ Default feature flags inserted.');
     
     await dataSource.destroy();
-    console.log('Migration completed.');
     
   } catch (error) {
     console.error('Migration failed:', error);

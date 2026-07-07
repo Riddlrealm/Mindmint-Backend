@@ -14,20 +14,16 @@ process.env.DB_USER = process.env.DB_USER || 'postgres';
 process.env.DB_PASSWORD = process.env.DB_PASSWORD || 'password';
 
 async function runMigration() {
-  console.log('Initializing database connection...');
   console.log(`Connecting to: ${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`);
   
   try {
     // Initialize the data source
     await AppDataSource.initialize();
-    console.log('Database connection established.');
     
     // Run migrations
-    console.log('Running migrations...');
     const migrations = await AppDataSource.runMigrations();
     
     if (migrations.length === 0) {
-      console.log('No pending migrations.');
     } else {
       console.log(`Applied ${migrations.length} migration(s):`);
       migrations.forEach(migration => {
@@ -37,7 +33,6 @@ async function runMigration() {
     
     // Close connection
     await AppDataSource.destroy();
-    console.log('Migration completed successfully.');
     
   } catch (error) {
     console.error('Migration failed:', error);
