@@ -137,7 +137,6 @@ export class StructuredLoggerInterceptor implements NestInterceptor {
     } else if (logEntry.level === 'warn') {
       console.warn(logOutput);
     } else {
-      console.log(logOutput);
     }
   }
 }
