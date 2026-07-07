@@ -267,7 +267,6 @@ export class TournamentEventsService {
       const ranking = rankings.find(r => r.userId === participant.userId);
       if (ranking) {
         participant.finalPosition = ranking.position;
-        // TODO: Assign prizes based on rewardPool distribution
       }
       await this.participantRepository.save(participant);
     }
