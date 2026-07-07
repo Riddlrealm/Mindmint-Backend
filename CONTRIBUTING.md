@@ -115,3 +115,5 @@ Open a question in Discussions, or ask in the PR — there's no such thing as a 
 
 Branches longer than one week stale get a ping from the bot and risk deletion.
 
+
+> Follow-up: create `docs/security/` with the disclosure SOP referenced above.
