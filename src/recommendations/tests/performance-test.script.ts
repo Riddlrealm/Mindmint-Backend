@@ -22,28 +22,19 @@ async function runPerformanceTests() {
   const app = await NestFactory.createApplicationContext(AppModule);
   const recommendationEngine = app.get(RecommendationEngineService);
 
-  console.log('🚀 Starting Performance Tests for Recommendation System...\n');
 
   // Test 1: Single user recommendation performance
-  console.log('📊 Test 1: Single User Recommendation Performance');
   const singleUserMetrics = await testSingleUserPerformance(recommendationEngine);
-  console.log('Results:', singleUserMetrics);
 
   // Test 2: Concurrent user recommendations
-  console.log('\n📊 Test 2: Concurrent User Recommendations (10 users)');
   const concurrentMetrics = await testConcurrentRecommendations(recommendationEngine, 10);
-  console.log('Results:', concurrentMetrics);
 
   // Test 3: High load test
-  console.log('\n📊 Test 3: High Load Test (50 concurrent users)');
   const highLoadMetrics = await testConcurrentRecommendations(recommendationEngine, 50);
-  console.log('Results:', highLoadMetrics);
 
   // Test 4: Algorithm comparison performance
-  console.log('\n📊 Test 4: Algorithm Performance Comparison');
   await testAlgorithmPerformance(recommendationEngine);
 
-  console.log('\n🎉 Performance testing completed!');
   await app.close();
 }
 
@@ -146,7 +137,6 @@ async function testAlgorithmPerformance(service: RecommendationEngineService) {
   const algorithms = ['collaborative', 'content-based', 'hybrid', 'popular'] as const;
   const userId = 'performance-test-user';
 
-  console.log('Algorithm Performance Comparison:');
   
   for (const algorithm of algorithms) {
     const times: number[] = [];
