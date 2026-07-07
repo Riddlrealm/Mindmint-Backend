@@ -117,3 +117,5 @@ Branches longer than one week stale get a ping from the bot and risk deletion.
 
 
 > Follow-up: create `docs/security/` with the disclosure SOP referenced above.
+
+For the rationale behind "one Nest app per microservice", see [ADR-001](docs/architecture/ADR-001-monorepo-nestjs.md).
