@@ -79,7 +79,7 @@ Use the **Bug report** issue template at `.github/ISSUE_TEMPLATE/bug_report.md`.
 3. What happened (logs/screenshots)
 4. Environment: OS, Node version, branch, commit SHA
 
-Security issues: see `SECURITY.md` (or open a private security advisory — **do not** file a public issue).
+Security issues: report privately via GitHub Security Advisories at /security/advisories/new (do not file a public issue).
 
 ---
 
