@@ -212,14 +212,12 @@ export class LeaderboardService implements OnModuleInit, OnModuleDestroy {
   // Cron job for daily leaderboard reset at midnight
   @Cron(CronExpression.EVERY_DAY_AT_MIDNIGHT)
   async handleDailyReset() {
-    console.log('Running daily leaderboard reset...');
     await this.resetLeaderboard(TimePeriod.DAILY);
   }
 
   // Cron job for weekly leaderboard reset on Sunday at midnight
   @Cron('0 0 * * 0')
   async handleWeeklyReset() {
-    console.log('Running weekly leaderboard reset...');
     await this.resetLeaderboard(TimePeriod.WEEKLY);
   }
 }
