@@ -212,7 +212,6 @@ export class EnergyService {
       throw new NotFoundException('User not found');
     }
 
-    // TODO: Integrate with actual token/wallet system
     // For now, assume 1 token = 10 energy, max 50 energy per refill
     const energyPerToken = 10;
     const maxEnergyPerRefill = 50;
