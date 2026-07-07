@@ -49,3 +49,10 @@ prisma/migrations/dev/
 .cache/
 .tmp/
 .temp/
+
+# OS / editor junk
+*.bak
+*.swp
+*.swo
+*~
+.Trash-*
