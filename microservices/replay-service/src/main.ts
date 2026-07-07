@@ -56,7 +56,6 @@ async function bootstrap() {
       },
     });
 
-    console.log('RabbitMQ connection configured');
   } catch (error) {
     console.warn('RabbitMQ connection failed, continuing with HTTP only:', error.message);
   }
