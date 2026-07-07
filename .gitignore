@@ -56,3 +56,24 @@ prisma/migrations/dev/
 *.swo
 *~
 .Trash-*
+
+# Nest build artifacts
+.nest/
+.turbo/
+rushx.log
+
+# Native binaries built by optionalDeps
+*.node
+*.d.ts.map
+
+# Coverage artifacts
+coverage/lcov-report/
+coverage/coverage-summary.json
+
+# SQLite dev DBs
+*.sqlite
+*.sqlite3
+.db
+
+# Lockfile fragments from npm i typos
+package-lock.json.bak
