@@ -21,7 +21,7 @@ export class RoomsController {
    */
   @Post()
   async createRoom(@Body() dto: CreateRoomDto) {
-    const ownerId = ''; // TODO: Get from auth
+    const ownerId = '';
     return this.roomsService.createRoom(ownerId, dto);
   }
 
@@ -55,7 +55,7 @@ export class RoomsController {
    */
   @Get('owned/list')
   async getOwnedRooms() {
-    const userId = ''; // TODO: Get from auth
+    const userId = '';
     return this.roomsService.getOwnedRooms(userId);
   }
 
@@ -65,7 +65,7 @@ export class RoomsController {
    */
   @Get('participating/list')
   async getParticipatingRooms() {
-    const userId = ''; // TODO: Get from auth
+    const userId = '';
     return this.roomsService.getParticipatingRooms(userId);
   }
 
@@ -78,7 +78,7 @@ export class RoomsController {
     @Param('roomId') roomId: string,
     @Body() dto: JoinRoomDto,
   ) {
-    const userId = ''; // TODO: Get from auth
+    const userId = '';
     return this.roomsService.joinRoom(roomId, userId, dto.password);
   }
 
@@ -88,7 +88,7 @@ export class RoomsController {
    */
   @Post(':roomId/leave')
   async leaveRoom(@Param('roomId') roomId: string) {
-    const userId = ''; // TODO: Get from auth
+    const userId = '';
     const result = await this.roomsService.leaveRoom(roomId, userId);
     if (!result) {
       return { message: 'Room deleted after leaving (no participants)' };
@@ -102,7 +102,7 @@ export class RoomsController {
    */
   @Post(':roomId/start')
   async startRoom(@Param('roomId') roomId: string) {
-    const userId = ''; // TODO: Get from auth
+    const userId = '';
     return this.roomsService.startRoom(roomId, userId);
   }
 
@@ -112,7 +112,7 @@ export class RoomsController {
    */
   @Post(':roomId/complete')
   async completeRoom(@Param('roomId') roomId: string) {
-    const userId = ''; // TODO: Get from auth
+    const userId = '';
     return this.roomsService.completeRoom(roomId, userId);
   }
 
@@ -122,7 +122,7 @@ export class RoomsController {
    */
   @Post(':roomId/cancel')
   async cancelRoom(@Param('roomId') roomId: string) {
-    const userId = ''; // TODO: Get from auth
+    const userId = '';
     return this.roomsService.cancelRoom(roomId, userId);
   }
 
@@ -135,7 +135,7 @@ export class RoomsController {
     @Param('roomId') roomId: string,
     @Body() dto: UpdateRoomDto,
   ) {
-    const userId = ''; // TODO: Get from auth
+    const userId = '';
     return this.roomsService.updateRoom(roomId, userId, dto);
   }
 
@@ -176,7 +176,7 @@ export class RoomsController {
     @Param('roomId') roomId: string,
     @Body() metadata: Record<string, any>,
   ) {
-    const userId = ''; // TODO: Get from auth
+    const userId = '';
     return this.roomsService.updateRoomMetadata(roomId, userId, metadata);
   }
 }
