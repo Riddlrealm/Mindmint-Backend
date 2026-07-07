@@ -155,7 +155,6 @@ export class TransactionMonitoringService implements OnModuleInit {
    */
   async getTransactionHistory(accountId: string): Promise<any[]> {
     try {
-      // TODO: Integrate with Stellar Horizon API to fetch full transaction history
       // For now, return empty array
       this.logger.debug(
         `Transaction history requested for account ${accountId}`,
