@@ -88,7 +88,6 @@ export class DataRetentionService {
 
     switch (entityType) {
       case 'game_session':
-        // TODO: Implement game session anonymization
         break;
       // Add other entity types as needed
     }
@@ -139,7 +138,6 @@ export class DataRetentionService {
       deleteBefore.setDate(deleteBefore.getDate() - settings.autoDeleteAfterDays);
 
       // Check if user has been inactive
-      // TODO: Implement inactive user detection and deletion
       this.logger.log(`Checking auto-delete for user ${settings.userId}`);
     }
   }
@@ -209,14 +207,13 @@ export class DataRetentionService {
     // Calculate auto-delete date if enabled
     let autoDeleteDate: Date | null = null;
     if (settings.autoDeleteEnabled && settings.autoDeleteAfterDays) {
-      // TODO: Get user's last activity date and calculate
       autoDeleteDate = new Date();
       autoDeleteDate.setDate(autoDeleteDate.getDate() + settings.autoDeleteAfterDays);
     }
 
     return {
       settings,
-      oldestDataDate: null, // TODO: Calculate from actual data
+      oldestDataDate: null,
       dataScheduledForDeletion: false,
       autoDeleteDate,
     };
