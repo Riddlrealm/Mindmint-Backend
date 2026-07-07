@@ -33,7 +33,7 @@ email-service/
 
 ## Prerequisites
 
-- Node.js 18+
+- Node.js 20+ (matches .nvmrc at repo root)
 - PostgreSQL 15+
 - Redis 7+
 - SendGrid API Key or AWS SES credentials
