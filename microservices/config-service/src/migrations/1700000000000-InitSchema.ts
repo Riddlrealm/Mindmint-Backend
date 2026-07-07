@@ -6,7 +6,7 @@ export class InitSchema1700000000000 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.query(`
       CREATE TABLE IF NOT EXISTS "environments" (
-        "id" uuid NOT NULL DEFAULT uuid_generate_v4(),
+        "id" uuid NOT NULL DEFAULT gen_random_uuid(),
         "name" varchar NOT NULL,
         "displayName" varchar NOT NULL,
         "description" text,
@@ -20,7 +20,7 @@ export class InitSchema1700000000000 implements MigrationInterface {
 
     await queryRunner.query(`
       CREATE TABLE IF NOT EXISTS "configurations" (
-        "id" uuid NOT NULL DEFAULT uuid_generate_v4(),
+        "id" uuid NOT NULL DEFAULT gen_random_uuid(),
         "key" varchar NOT NULL,
         "value" text NOT NULL,
         "description" varchar,
@@ -42,7 +42,7 @@ export class InitSchema1700000000000 implements MigrationInterface {
 
     await queryRunner.query(`
       CREATE TABLE IF NOT EXISTS "secrets" (
-        "id" uuid NOT NULL DEFAULT uuid_generate_v4(),
+        "id" uuid NOT NULL DEFAULT gen_random_uuid(),
         "name" varchar NOT NULL,
         "value" text NOT NULL,
         "description" text,
@@ -66,7 +66,7 @@ export class InitSchema1700000000000 implements MigrationInterface {
 
     await queryRunner.query(`
       CREATE TABLE IF NOT EXISTS "audit_logs" (
-        "id" uuid NOT NULL DEFAULT uuid_generate_v4(),
+        "id" uuid NOT NULL DEFAULT gen_random_uuid(),
         "action" varchar NOT NULL,
         "entityType" varchar NOT NULL,
         "entityId" uuid NOT NULL,
@@ -82,7 +82,7 @@ export class InitSchema1700000000000 implements MigrationInterface {
 
     await queryRunner.query(`
       CREATE TABLE IF NOT EXISTS "webhook_subscriptions" (
-        "id" uuid NOT NULL DEFAULT uuid_generate_v4(),
+        "id" uuid NOT NULL DEFAULT gen_random_uuid(),
         "serviceName" varchar NOT NULL,
         "webhookUrl" varchar NOT NULL,
         "events" text,

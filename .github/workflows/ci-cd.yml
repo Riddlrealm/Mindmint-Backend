@@ -325,7 +325,7 @@ jobs:
     name: 🐳 Build & Push Docker Image
     runs-on: ubuntu-latest
     needs: [lint-and-format, unit-tests, integration-tests]
-    if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/develop') && env.DOCKER_LOGIN_ENABLED == 'true'
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/develop')
 
     steps:
       - name: 📥 Checkout code
@@ -349,6 +349,7 @@ jobs:
             type=sha
 
       - name: 🏗️ Build and push Docker image
+        if: ${{ secrets.DOCKER_USERNAME != '' && secrets.DOCKER_PASSWORD != '' }}
         uses: docker/build-push-action@v5
         with:
           context: microservices/config-service
