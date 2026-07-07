@@ -401,7 +401,6 @@ class PatternMatchingGenerator implements IPuzzleGenerator {
     difficulty: DifficultyLevel,
     constraints?: any,
   ): Promise<IPuzzle> {
-    // TODO: Implement pattern matching puzzle
     throw new Error('Pattern matching puzzles not yet implemented');
   }
 
@@ -421,7 +420,6 @@ class MathematicalGenerator implements IPuzzleGenerator {
     difficulty: DifficultyLevel,
     constraints?: any,
   ): Promise<IPuzzle> {
-    // TODO: Implement mathematical puzzle
     throw new Error('Mathematical puzzles not yet implemented');
   }
 
@@ -441,7 +439,6 @@ class WordPuzzleGenerator implements IPuzzleGenerator {
     difficulty: DifficultyLevel,
     constraints?: any,
   ): Promise<IPuzzle> {
-    // TODO: Implement word puzzle
     throw new Error('Word puzzles not yet implemented');
   }
 
