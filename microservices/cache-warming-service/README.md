@@ -36,3 +36,9 @@ docker-compose up --build
 - `POST /api/cache-warming/optimize`
 - `GET /api/cache-warming/jobs`
 - `GET /api/cache-warming/metrics`
+
+## Prerequisites
+
+- Node.js 20+ (matches repo .nvmrc)
+- PostgreSQL 15+
+- Redis 7+
