@@ -45,14 +45,12 @@ export class DatabaseService {
 
   public async initialize(): Promise<void> {
     try {
-      console.log('Initializing database connection...');
       const dataSource = this.getDataSourceInstance();
 
       if (!dataSource.isInitialized) {
         await dataSource.initialize();
       }
 
-      console.log('Database connection initialized successfully');
 
       // Start health checks
       this.startHealthChecks();
@@ -69,10 +67,8 @@ export class DatabaseService {
 
   public async runMigrations(): Promise<void> {
     try {
-      console.log('Running database migrations...');
       const dataSource = this.getDataSourceInstance();
       await dataSource.runMigrations();
-      console.log('Migrations completed successfully');
     } catch (error) {
       console.error('Migration failed:', error);
       throw error;
@@ -81,10 +77,8 @@ export class DatabaseService {
 
   public async revertMigration(): Promise<void> {
     try {
-      console.log('Reverting last migration...');
       const dataSource = this.getDataSourceInstance();
       await dataSource.undoLastMigration();
-      console.log('Migration reverted successfully');
     } catch (error) {
       console.error('Migration revert failed:', error);
       throw error;
@@ -217,7 +211,6 @@ export class DatabaseService {
     const dataSource = this.getDataSourceInstance();
     if (dataSource.isInitialized) {
       await dataSource.destroy();
-      console.log('Database connection closed');
     }
   }
 
