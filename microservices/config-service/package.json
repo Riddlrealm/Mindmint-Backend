@@ -25,7 +25,10 @@
     "migration:generate": "typeorm migration:generate -d src/config/orm-config.ts",
     "migration:revert": "typeorm migration:revert -d src/config/orm-config.ts",
     "migration:create": "typeorm migration:create",
-    "seed:environments": "ts-node src/scripts/seed-environments.ts"
+    "seed:environments": "ts-node src/scripts/seed-environments.ts",
+    "seed:perf": "ts-node src/scripts/seed-environments.ts",
+    "test:performance": "echo 'No performance tests configured yet for config-service' && exit 0",
+    "test:smoke": "echo 'Smoke tests not yet defined for config-service' && exit 0"
   },
   "dependencies": {
     "@nestjs/axios": "^4.0.1",
@@ -41,7 +44,7 @@
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.1",
     "keyv": "^5.5.5",
-    "pg": "^8.17.2",
+    "pg": "~8.11.5",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.1",
     "typeorm": "^0.3.28"

@@ -102,11 +102,13 @@ jobs:
         run: npm run test:cov
 
       - name: ☂️ Upload coverage to Codecov
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v4
         with:
           file: ./coverage/lcov.info
           flags: unit-tests
           name: unit-tests-${{ matrix.node-version }}
+          token: ${{ secrets.CODECOV_TOKEN }}
+          fail_ci_if_error: false
 
   # Integration Tests
   integration-tests:
@@ -164,11 +166,13 @@ jobs:
           ENCRYPTION_KEY: test-encryption-key-at-least-32-characters
 
       - name: 📊 Upload integration test coverage
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v4
         with:
           file: ./coverage/lcov.info
           flags: integration-tests
           name: integration-tests
+          token: ${{ secrets.CODECOV_TOKEN }}
+          fail_ci_if_error: false
 
   # End-to-End Tests
   e2e-tests:
@@ -297,10 +301,11 @@ jobs:
           DATABASE_NAME: mindmint_backend_perf
 
       - name: 📊 Upload performance results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: performance-results
           path: performance-results/
+          if-no-files-found: warn
 
   # Build and Push Docker Image
   build-and-push:
