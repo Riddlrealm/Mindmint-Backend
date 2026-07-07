@@ -4,7 +4,6 @@ import { IEventHandler, BaseEvent, UserRegisteredEvent, PuzzleCompletedEvent, To
 @Injectable()
 export class UserRegisteredHandler implements IEventHandler<UserRegisteredEvent> {
   async handle(event: UserRegisteredEvent): Promise<void> {
-    console.log('Social service handling UserRegistered event:', event);
     // Initialize user profile in social service
     await this.initializeUserProfile(event.data.userId, event.data.username, event.data.email);
   }
@@ -18,7 +17,6 @@ export class UserRegisteredHandler implements IEventHandler<UserRegisteredEvent>
 @Injectable()
 export class PuzzleCompletedHandler implements IEventHandler<PuzzleCompletedEvent> {
   async handle(event: PuzzleCompletedEvent): Promise<void> {
-    console.log('Social service handling PuzzleCompleted event:', event);
     // Update user score and leaderboard
     await this.updateUserScore(event.data.userId, event.data.score);
     await this.updateLeaderboard(event.data.userId, event.data.score);
@@ -38,7 +36,6 @@ export class PuzzleCompletedHandler implements IEventHandler<PuzzleCompletedEven
 @Injectable()
 export class TournamentStartedHandler implements IEventHandler<TournamentStartedEvent> {
   async handle(event: TournamentStartedEvent): Promise<void> {
-    console.log('Social service handling TournamentStarted event:', event);
     // Handle tournament start in social service
     await this.initializeTournamentLeaderboard(event.data.tournamentId, event.data.name);
   }
@@ -52,7 +49,6 @@ export class TournamentStartedHandler implements IEventHandler<TournamentStarted
 @Injectable()
 export class TournamentEndedHandler implements IEventHandler<TournamentEndedEvent> {
   async handle(event: TournamentEndedEvent): Promise<void> {
-    console.log('Social service handling TournamentEnded event:', event);
     // Handle tournament end and finalize rankings
     await this.finalizeTournamentRankings(event.data.tournamentId, event.data.finalStandings);
   }
