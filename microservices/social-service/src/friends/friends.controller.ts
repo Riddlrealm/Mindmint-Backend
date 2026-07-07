@@ -19,7 +19,7 @@ export class FriendsController {
     // @CurrentUser() userId: string,
   ) {
     // In real implementation, get userId from JWT token
-    const userId = ''; // TODO: Get from auth
+    const userId = '';
     return this.friendsService.sendFriendRequest(userId, dto);
   }
 
@@ -29,7 +29,7 @@ export class FriendsController {
    */
   @Get('requests/pending')
   async getPendingRequests() {
-    const userId = ''; // TODO: Get from auth
+    const userId = '';
     return this.friendsService.getPendingRequests(userId);
   }
 
@@ -39,7 +39,7 @@ export class FriendsController {
    */
   @Post('requests/:requestId/accept')
   async acceptFriendRequest(@Param('requestId') requestId: string) {
-    const userId = ''; // TODO: Get from auth
+    const userId = '';
     return this.friendsService.acceptFriendRequest(userId, requestId);
   }
 
@@ -49,7 +49,7 @@ export class FriendsController {
    */
   @Post('requests/:requestId/decline')
   async declineFriendRequest(@Param('requestId') requestId: string) {
-    const userId = ''; // TODO: Get from auth
+    const userId = '';
     return this.friendsService.declineFriendRequest(userId, requestId);
   }
 
@@ -59,7 +59,7 @@ export class FriendsController {
    */
   @Get()
   async getFriends() {
-    const userId = ''; // TODO: Get from auth
+    const userId = '';
     return this.friendsService.getFriends(userId);
   }
 
@@ -69,7 +69,7 @@ export class FriendsController {
    */
   @Get(':friendId')
   async getFriend(@Param('friendId') friendId: string) {
-    const userId = ''; // TODO: Get from auth
+    const userId = '';
     return this.friendsService.getFriend(userId, friendId);
   }
 
@@ -82,7 +82,7 @@ export class FriendsController {
     @Param('friendId') friendId: string,
     @Body() dto: AddFriendNicknameDto,
   ) {
-    const userId = ''; // TODO: Get from auth
+    const userId = '';
     return this.friendsService.updateFriendNickname(userId, friendId, dto.nickname);
   }
 
@@ -92,7 +92,7 @@ export class FriendsController {
    */
   @Post(':friendId/block')
   async blockFriend(@Param('friendId') friendId: string) {
-    const userId = ''; // TODO: Get from auth
+    const userId = '';
     return this.friendsService.blockFriend(userId, friendId);
   }
 
@@ -102,7 +102,7 @@ export class FriendsController {
    */
   @Post(':friendId/unblock')
   async unblockFriend(@Param('friendId') friendId: string) {
-    const userId = ''; // TODO: Get from auth
+    const userId = '';
     return this.friendsService.unblockFriend(userId, friendId);
   }
 
@@ -112,7 +112,7 @@ export class FriendsController {
    */
   @Delete(':friendId')
   async removeFriend(@Param('friendId') friendId: string) {
-    const userId = ''; // TODO: Get from auth
+    const userId = '';
     await this.friendsService.removeFriend(userId, friendId);
     return { message: 'Friend removed successfully' };
   }
