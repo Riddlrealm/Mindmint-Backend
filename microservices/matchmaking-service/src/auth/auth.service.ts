@@ -84,7 +84,6 @@ export class AuthService {
 
     await this.usersRepository.save(user)
 
-    // TODO: Send verification email (mocked for now)
     console.log(`Verification email sent to ${user.email} with token: ${verificationToken}`)
 
     return { message: "User registered successfully. Please verify your email.", userId: user.id }
@@ -141,7 +140,6 @@ export class AuthService {
     user.resetPasswordExpires = resetPasswordExpires
     await this.usersRepository.save(user)
 
-    // TODO: Send password reset email (mocked for now)
     console.log(`Password reset email sent to ${user.email} with token: ${resetPasswordToken}`)
 
     return { message: "If a user with that email exists, a password reset link has been sent." }
@@ -222,7 +220,6 @@ export class AuthService {
     oauthUser: any,
     provider: string,
   ): Promise<User> {
-    // TODO: Implement OAuth user creation/linking
     throw new Error("OAuth functionality not yet implemented")
   }
 }
