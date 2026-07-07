@@ -105,3 +105,13 @@ src/
 ## Need help?
 
 Open a question in Discussions, or ask in the PR — there's no such thing as a dumb question.
+
+## Branch naming
+
+- `feat/<scope>-<short-name>` — new feature on a microservice or `src/`.
+- `fix/<scope>-<short-name>` — bug fixes; scope is `@<user/repo>` style id.
+- `chore/<scope>` — no-op cleanups and tooling only.
+- `docs/<scope>` — README, CONTRIBUTING, ADRs only.
+
+Branches longer than one week stale get a ping from the bot and risk deletion.
+
