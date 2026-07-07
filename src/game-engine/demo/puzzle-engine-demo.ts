@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-
 /**
  * Puzzle Engine Demo Script
  *
@@ -11,7 +10,6 @@
  *
  * Run with: npm run demo:puzzle-engine
  */
-
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from '../../app.module';
 import { PuzzleGeneratorService } from '../services/puzzle-generator.service';
@@ -21,41 +19,31 @@ import { AchievementsService } from '../services/achievements.service';
 import { PuzzleType, DifficultyLevel } from '../types/puzzle.types';
 import { PerformanceMetrics } from '../interfaces/puzzle.interfaces';
 import { Logger } from '@nestjs/common';
-
 const logger = new Logger('PuzzleEngineDemo');
-
 async function main() {
-
   // Initialize NestJS app
   const app = await NestFactory.createApplicationContext(AppModule, {
     logger: ['error', 'warn', 'log'],
   });
-
   try {
     // Get services
     const puzzleGenerator = app.get(PuzzleGeneratorService);
     const puzzleRegistry = app.get(PuzzleRegistryService);
     const scoringService = app.get(ScoringService);
     const achievementsService = app.get(AchievementsService);
-
     // Initialize puzzle registry
     await puzzleRegistry.onModuleInit();
-
-
     // Demo 1: Generate different puzzle types
-
     const puzzleTypes = [
       PuzzleType.LOGIC_GRID,
       PuzzleType.SEQUENCE,
       PuzzleType.SPATIAL,
     ];
-
     const difficulties = [
       DifficultyLevel.BEGINNER,
       DifficultyLevel.MEDIUM,
       DifficultyLevel.HARD,
     ];
-
     for (const type of puzzleTypes) {
       for (const difficulty of difficulties) {
         try {
@@ -66,14 +54,12 @@ async function main() {
               seed: Math.floor(Math.random() * 10000),
             },
           );
-
-          console.log(`📋 ${type} (Difficulty ${difficulty}):`);
-          console.log(`   ID: ${puzzle.id}`);
+          :`);
+          ;
           console.log(
             `   Time Limit: ${puzzle.timeLimit ? puzzle.timeLimit / 1000 + 's' : 'None'}`,
           );
-          console.log(`   Max Moves: ${puzzle.maxMoves || 'Unlimited'}`);
-
+          ;
           const currentState = puzzle.getState();
           if (type === PuzzleType.SEQUENCE) {
             console.log(
@@ -90,9 +76,8 @@ async function main() {
             console.log(
               `   Grid Size: ${currentState.currentState?.width || 'N/A'}x${currentState.currentState?.height || 'N/A'}`,
             );
-            console.log(`   Constraints: ${currentState.currentState?.constraints?.length || 0}`);
+            ;
           }
-
         } catch (error) {
           console.log(
             `❌ Failed to generate ${type} at difficulty ${difficulty}: ${error.message}`,
@@ -100,15 +85,12 @@ async function main() {
         }
       }
     }
-
     // Demo 2: Scoring System
-
     const testPuzzle = await puzzleGenerator.generatePuzzle(
       PuzzleType.SEQUENCE,
       DifficultyLevel.MEDIUM,
       { seed: 12345 },
     );
-
     // Simulate different performance scenarios
     const performanceScenarios = [
       {
@@ -133,7 +115,6 @@ async function main() {
         streak: 0,
       },
     ];
-
     for (const scenario of performanceScenarios) {
       const performance: PerformanceMetrics = {
         puzzleId: testPuzzle.id,
@@ -146,30 +127,25 @@ async function main() {
         score: 1000, // Will be calculated
         timestamp: new Date(),
       };
-
       const scoreResult = scoringService.calculatePuzzleScore(
         testPuzzle,
         performance,
         scenario.streak,
       );
-
-      console.log(`🎯 ${scenario.name}:`);
-      console.log(`   Final Score: ${scoreResult.finalScore}`);
-      console.log(`   Base Score: ${scoreResult.baseScore}`);
-      console.log(`   Time Bonus: ${scoreResult.timeBonus}`);
-      console.log(`   Efficiency Bonus: ${scoreResult.efficiencyBonus}`);
-      console.log(`   Streak Bonus: ${scoreResult.streakBonus}`);
-      console.log(`   Hints Penalty: -${scoreResult.hintsUsedPenalty}`);
+      ;
+      ;
+      ;
+      ;
+      ;
+      ;
+      ;
       console.log(
         `   Difficulty Multiplier: ${scoreResult.difficultyMultiplier}x`,
       );
     }
-
     // Demo 3: Achievement System
-
     // Reset achievements for demo
     achievementsService.resetAchievements();
-
     // Simulate different player achievements
     const playerProgressions = [
       {
@@ -253,28 +229,24 @@ async function main() {
         },
       },
     ];
-
     for (const progression of playerProgressions) {
-      console.log(`👤 ${progression.name}:`);
-
+      ;
       const newAchievements = achievementsService.checkAchievements(
         testPuzzle,
         progression.performance,
         progression.stats,
       );
-
       if (newAchievements.length > 0) {
         newAchievements.forEach((achievement) => {
-          console.log(`   - ${achievement.name} (${achievement.tier})`);
-          console.log(`     ${achievement.description}`);
-          console.log(`     Reward: +${achievement.reward.experience} XP`);
+          `);
+          ;
+          ;
         });
       } else {
         console.log(
           `   📈 No new achievements (player may have already unlocked available ones)`,
         );
       }
-
       // Get player achievement summary
       const playerAchievements =
         achievementsService.getPlayerAchievements('demo-player');
@@ -282,39 +254,33 @@ async function main() {
         `   Progress: ${playerAchievements.unlockedCount}/${playerAchievements.totalCount} achievements`,
       );
     }
-
     // Demo 4: Registry and Available Puzzles
-
     const registeredTypes = puzzleRegistry.getRegisteredTypes();
-    console.log(`Available Puzzle Types: ${registeredTypes.length}`);
-
+    ;
     registeredTypes.forEach((type) => {
       const generator = puzzleRegistry.getGenerator(type);
       console.log(
         `- ${type}: ${generator ? '✅ Available' : '❌ No Generator'}`,
       );
     });
-
     console.log(
       `\nTotal Puzzle Generators: ${puzzleRegistry.getGeneratorCount()}`,
     );
-
     // Test creating instances
     for (const type of registeredTypes.slice(0, 3)) {
       // Test first 3 types
       try {
         const instance = await puzzleRegistry.createPuzzleInstance(type);
-        console.log(`- ${type}: ✅ Instance created successfully`);
-        console.log(`  Type: ${instance.getType()}`);
-        console.log(`  Supports Undo: ${instance.canUndo ? instance.canUndo() : 'N/A'}`);
-        console.log(`  Supports Redo: ${instance.canRedo ? instance.canRedo() : 'N/A'}`);
+        ;
+        }`);
+         : 'N/A'}`);
+         : 'N/A'}`);
       } catch (error) {
         console.log(
           `- ${type}: ❌ Failed to create instance: ${error.message}`,
         );
       }
     }
-
   } catch (error) {
     logger.error('Demo failed:', error.message);
     console.error('\n❌ Demo failed:', error.message);
@@ -322,7 +288,6 @@ async function main() {
     await app.close();
   }
 }
-
 // Run the demo
 if (require.main === module) {
   main().catch((error) => {
@@ -330,5 +295,4 @@ if (require.main === module) {
     process.exit(1);
   });
 }
-
 export { main as runPuzzleEngineDemo };
