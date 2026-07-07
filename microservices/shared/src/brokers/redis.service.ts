@@ -51,7 +51,6 @@ export class RedisService implements IMessageBroker, OnModuleInit, OnModuleDestr
     });
 
     this.redis.on('connect', () => {
-      console.log('Redis connected');
     });
 
     this.redis.on('error', (error) => {

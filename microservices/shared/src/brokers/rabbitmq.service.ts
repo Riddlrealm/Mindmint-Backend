@@ -61,7 +61,6 @@ export class RabbitMQService implements IMessageBroker, OnModuleInit, OnModuleDe
     });
 
     this.connection.on('connect', () => {
-      console.log('RabbitMQ connected');
     });
 
     this.connection.on('disconnect', (params) => {
