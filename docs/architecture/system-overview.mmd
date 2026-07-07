@@ -1,0 +1,26 @@
+flowchart LR
+  subgraph Clients
+    FE[React Frontend]
+    FW[Freighter Wallet]
+  end
+  subgraph MindmintMonorepo
+    API[NestJS API Gateway]
+    PZ[puzzles-service]
+    AC[achievement-service]
+    LB[leaderboard-service]
+    WL[wallet-service]
+    SC[social-service]
+  end
+  subgraph Stellar
+    SOROBAN[Soroban smart contracts]
+    HORIZON[Horizon RPC]
+  end
+  FE --> API
+  FW --> API
+  API --> PZ
+  API --> AC
+  API --> LB
+  API --> WL
+  API --> SC
+  WL --> HORIZON
+  AC --> SOROBAN
