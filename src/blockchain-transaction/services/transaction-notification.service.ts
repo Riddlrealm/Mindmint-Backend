@@ -49,11 +49,9 @@ export class TransactionNotificationService {
 
     // Log critical alerts
     if (alert.severity === 'critical' || alert.severity === 'high') {
-      // TODO: Send to monitoring service (PagerDuty, OpsGenie, etc.)
       this.logger.error(`CRITICAL ALERT: ${alert.message}`);
     }
 
-    // TODO: Send notifications to admins for high/critical alerts
     // This could be email, Slack, Discord, etc.
   }
 
@@ -160,7 +158,6 @@ export class TransactionNotificationService {
       });
     }
 
-    // TODO: Send alert to support team for manual intervention
   }
 
   /**
@@ -175,7 +172,6 @@ export class TransactionNotificationService {
     timestamp: Date;
     read: boolean;
   }): Promise<void> {
-    // TODO: Integrate with your notification service
     // This could be:
     // - In-app notifications
     // - Push notifications (FCM)
@@ -195,7 +191,6 @@ export class TransactionNotificationService {
    * Get notifications for a user
    */
   async getUserNotifications(userId: string, unreadOnly: boolean = false): Promise<any[]> {
-    // TODO: Implement based on your notification storage
     // This is a placeholder
     return [];
   }
@@ -204,7 +199,6 @@ export class TransactionNotificationService {
    * Mark notification as read
    */
   async markNotificationAsRead(notificationId: string): Promise<void> {
-    // TODO: Implement based on your notification storage
   }
 
   /**
