@@ -45,7 +45,6 @@ export class PuzzleRegistryService implements OnModuleInit {
     );
     this.logger.debug('Registered Spatial puzzle type');
 
-    // TODO: Register other puzzle types as they are implemented
     // this.puzzleEngine.registerPuzzleType(PuzzleType.PATTERN_MATCHING, () => new PatternMatchingPuzzle())
     // this.puzzleEngine.registerPuzzleType(PuzzleType.MATHEMATICAL, () => new MathematicalPuzzle())
     // this.puzzleEngine.registerPuzzleType(PuzzleType.WORD_PUZZLE, () => new WordPuzzle())
