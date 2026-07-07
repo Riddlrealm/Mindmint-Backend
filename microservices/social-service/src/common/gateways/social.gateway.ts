@@ -340,7 +340,6 @@ export class SocialGateway
    * Get user ID from socket (in real implementation, extract from JWT token)
    */
   private getUserIdFromWebSocket(socket: WebSocket): string | null {
-    // TODO: Extract user ID from socket authentication/headers
     return null;
   }
 
