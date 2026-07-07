@@ -59,6 +59,5 @@ export class EventSubscriberModule implements OnModuleInit {
   private async setupMessageBrokerSubscriptions() {
     // Subscribe to events from other services
     // This would typically use RabbitMQ or Redis service to subscribe to events
-    console.log('Setting up message broker subscriptions for notification service');
   }
 }
