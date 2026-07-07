@@ -406,7 +406,6 @@ export class SeasonalEventsController {
   async announceEvent(@Param('eventId') eventId: string) {
     const event = await this.eventService.findOne(eventId);
     
-    // TODO: Integrate with notification service or WebSocket gateway
     // Example: await this.notificationService.broadcastEventAnnouncement(event);
     
     return {
