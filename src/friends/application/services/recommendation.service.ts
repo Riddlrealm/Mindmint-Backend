@@ -159,7 +159,6 @@ export class RecommendationService {
     userId1: string,
     userId2: string,
   ): Promise<number> {
-    // TODO: Call user service to get interests/tags, calculate overlap
     // For now, return a mock value
     return Math.random() * 5;
   }
