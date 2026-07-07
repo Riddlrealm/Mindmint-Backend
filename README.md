@@ -123,3 +123,7 @@ This feature allows users to authenticate using their Stellar wallet (Freighter)
 - Rate limiting: 100 requests/minute
 - JWT expiry: 1 hour
 - Replay protection: timestamped challenges
+
+### Architecture
+
+High-level diagrams live under `docs/architecture/` as Mermaid sources (see ADR-001). Each microservice follows the same NestJS module-per-folder layout: `<feature>.module.ts`, `<feature>.controller.ts`, `<feature>.service.ts`, plus `dto/`, `entities/`, and colocated `*.spec.ts`.
