@@ -32,7 +32,6 @@ export class SecretService {
       category: createSecretDto.category,
       encryptedValue: encryptedText,
       iv,
-      value: createSecretDto.value,
       rotationIntervalSeconds: createSecretDto.rotationIntervalSeconds || 7776000,
       createdBy: userId,
       updatedBy: userId,
@@ -70,7 +69,6 @@ export class SecretService {
       const { encryptedText, iv } = this.encryptionService.encrypt(updateSecretDto.value);
       secret.encryptedValue = encryptedText;
       secret.iv = iv;
-      secret.value = updateSecretDto.value;
       secret.requiresRotation = false;
     }
 
@@ -178,7 +176,6 @@ export class SecretService {
 
     secret.encryptedValue = encryptedText;
     secret.iv = iv;
-    secret.value = newValue;
     secret.lastRotatedAt = new Date();
     secret.rotationCount++;
     secret.requiresRotation = false;

@@ -14,9 +14,6 @@ export class Secret {
   @Column({ type: 'varchar', unique: true })
   name: string;
 
-  @Column({ type: 'text' })
-  value: string;
-
   @Column({ type: 'text', nullable: true })
   description: string;
 
