@@ -14,6 +14,7 @@ describe('SecretService', () => {
     save: jest.fn(),
     find: jest.fn(),
     remove: jest.fn(),
+    createQueryBuilder: jest.fn(),
   };
 
   const encryptionService = {
@@ -76,5 +77,19 @@ describe('SecretService', () => {
     expect(saved.encryptedValue).toBe('cipher-text');
     expect(saved.iv).toBe('iv-hex');
     expect((saved as Record<string, unknown>).value).toBeUndefined();
+  });
+
+  it('decrypts using an explicit encryptedValue/iv selection', async () => {
+    const getOne = jest
+      .fn()
+      .mockResolvedValue({ id: 'secret-1', encryptedValue: 'cipher-text', iv: 'iv-hex' });
+    const where = jest.fn().mockReturnValue({ getOne });
+    const addSelect = jest.fn().mockReturnValue({ where });
+    secretRepository.createQueryBuilder.mockReturnValue({ addSelect });
+    encryptionService.decrypt.mockReturnValue('decrypted');
+
+    await expect(service.getSecretValue('secret-1')).resolves.toBe('decrypted');
+    expect(secretRepository.createQueryBuilder).toHaveBeenCalledWith('secret');
+    expect(encryptionService.decrypt).toHaveBeenCalledWith('cipher-text', 'iv-hex');
   });
 });

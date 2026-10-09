@@ -125,7 +125,13 @@ export class SecretService {
   }
 
   async getSecretValue(id: string): Promise<string> {
-    const secret = await this.secretRepository.findOne({ where: { id } });
+    // `encryptedValue` and `iv` are `select: false` so they are never returned
+    // by the read endpoints; load them explicitly here to decrypt.
+    const secret = await this.secretRepository
+      .createQueryBuilder('secret')
+      .addSelect(['secret.encryptedValue', 'secret.iv'])
+      .where('secret.id = :id', { id })
+      .getOne();
 
     if (!secret) {
       throw new NotFoundException(`Secret with ID "${id}" not found`);
