@@ -26,10 +26,10 @@ export class Secret {
   @Column({ type: 'varchar', default: 'aes-256-cbc' })
   encryptionAlgorithm: string;
 
-  @Column({ type: 'text', nullable: true })
+  @Column({ type: 'text', nullable: true, select: false })
   encryptedValue: string;
 
-  @Column({ type: 'text', nullable: true })
+  @Column({ type: 'text', nullable: true, select: false })
   iv: string;
 
   @Column({ type: 'timestamp', nullable: true })
