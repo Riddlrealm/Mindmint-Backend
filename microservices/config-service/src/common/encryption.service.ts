@@ -1,6 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import * as crypto from 'crypto';
 
+const DEFAULT_INSECURE_KEY = 'default-insecure-key-change-in-production';
+
 @Injectable()
 export class EncryptionService {
   private algorithm: string;
@@ -9,19 +11,29 @@ export class EncryptionService {
 
   constructor() {
     this.algorithm = process.env.ENCRYPTION_ALGORITHM || 'aes-256-cbc';
-    this.encryptionKey = process.env.ENCRYPTION_KEY || 'default-insecure-key-change-in-production';
-    this.ivLength = parseInt(process.env.ENCRYPTION_IV_LENGTH || '16', 10);
 
-    // Ensure key is correct length for algorithm
-    if (this.algorithm === 'aes-256-cbc') {
-      if (this.encryptionKey.length < 32) {
-        this.encryptionKey = crypto
-          .createHash('sha256')
-          .update(this.encryptionKey)
-          .digest('hex')
-          .slice(0, 32);
-      }
+    const rawKey = process.env.ENCRYPTION_KEY;
+    if (process.env.NODE_ENV === 'production' && !rawKey) {
+      throw new Error('ENCRYPTION_KEY must be set in production');
     }
+
+    this.encryptionKey = this.normalizeKey(rawKey || DEFAULT_INSECURE_KEY);
+    this.ivLength = parseInt(process.env.ENCRYPTION_IV_LENGTH || '16', 10);
+  }
+
+  /**
+   * aes-256-cbc requires a key of exactly 32 bytes. A raw 32-character key is
+   * used verbatim (backwards compatible); any other length is digested to a
+   * 32-byte hex key. Previously only keys shorter than 32 characters were
+   * hashed, so a 32+ character key (including the default fallback and the
+   * common 64-character hex key) was passed through unchanged and made
+   * `createCipheriv` throw "Invalid key length".
+   */
+  private normalizeKey(rawKey: string): string {
+    if (this.algorithm === 'aes-256-cbc' && rawKey.length !== 32) {
+      return crypto.createHash('sha256').update(rawKey, 'utf8').digest('hex').slice(0, 32);
+    }
+    return rawKey;
   }
 
   encrypt(text: string): { encryptedText: string; iv: string } {
