@@ -151,7 +151,11 @@ export class SecretService {
   }
 
   async deleteSecret(id: string, userId?: string): Promise<void> {
-    const secret = await this.secretRepository.findOne({ where: { id } });
+    const secret = await this.secretRepository
+      .createQueryBuilder('secret')
+      .addSelect(['secret.encryptedValue', 'secret.iv'])
+      .where('secret.id = :id', { id })
+      .getOne();
 
     if (!secret) {
       throw new NotFoundException(`Secret with ID "${id}" not found`);
